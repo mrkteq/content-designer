@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mark Tucker - Content Designer. Portfolio showcasing process, rationale, and execution in content design.">
+  <title>Mark Tucker - Content Designer</title>
+  <style>
+    /* Reset and Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-text: #1a1a1a;
+      --color-text-secondary: #525252;
+      --color-background: #ffffff;
+      --color-surface: #f5f5f5;
+      --color-border: #e0e0e0;
+      --color-accent: #0066cc;
+      --color-accent-hover: #004999;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      --max-width: 680px;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-text: #e8e8e8;
+        --color-text-secondary: #a0a0a0;
+        --color-background: #121212;
+        --color-surface: #1e1e1e;
+        --color-border: #333333;
+        --color-accent: #4d9fff;
+        --color-accent-hover: #80b8ff;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      background-color: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      padding: var(--space-sm);
+      background: var(--color-accent);
+      color: #ffffff;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-md);
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    h4 {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-xs);
+    }
+
+    p {
+      margin-bottom: var(--space-sm);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      color: var(--color-accent-hover);
+    }
+
+    a:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Layout */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    /* Header */
+    .site-header {
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-background);
+    }
+
+    @media (min-width: 1025px) {
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    @media (min-width: 640px) {
+      .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .site-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .site-title span {
+      color: var(--color-text-secondary);
+      font-weight: 400;
+    }
+
+    /* Navigation */
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 0.9375rem;
+      padding: var(--space-xs) 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus {
+      color: var(--color-text);
+      border-bottom-color: var(--color-accent);
+      outline: none;
+    }
+
+    /* Main Content */
+    main {
+      padding: var(--space-xl) 0;
+    }
+
+    section {
+      margin-bottom: var(--space-xl);
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* Introduction */
+    .intro {
+      font-size: 1.125rem;
+    }
+
+    /* Case Studies */
+    .case-studies {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+
+    .case-study {
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--space-lg);
+    }
+
+    .case-study-title {
+      margin-bottom: var(--space-lg);
+    }
+
+    .case-study-section {
+      margin-bottom: var(--space-lg);
+    }
+
+    .case-study-section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Artifact Display */
+    .artifact {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      margin: var(--space-md) 0;
+    }
+
+    .artifact summary {
+      padding: var(--space-sm) var(--space-md);
+      cursor: pointer;
+      font-weight: 500;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .artifact summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .artifact summary::before {
+      content: "▸";
+      font-size: 0.75rem;
+      transition: transform 0.15s;
+    }
+
+    .artifact[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .artifact summary:hover {
+      background: var(--color-border);
+    }
+
+    .artifact summary:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: -2px;
+    }
+
+    .artifact-content {
+      padding: var(--space-md);
+      border-top: 1px solid var(--color-border);
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .artifact-content pre {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* Side-by-side artifacts */
+    .artifact-pair {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    @media (min-width: 640px) {
+      .artifact-pair {
+        flex-direction: row;
+      }
+
+      .artifact-pair .artifact {
+        flex: 1;
+        margin: 0;
+      }
+    }
+
+    /* Placeholder styling */
+    .placeholder {
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+
+    /* Contact */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .contact-item {
+      display: flex;
+      gap: var(--space-sm);
+    }
+
+    .contact-label {
+      color: var(--color-text-secondary);
+      min-width: 5rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    /* Print Styles */
+    @media print {
+      .site-header {
+        position: static;
+      }
+
+      .site-nav,
+      .artifact summary::before {
+        display: none;
+      }
+
+      .artifact {
+        break-inside: avoid;
+      }
+
+      .artifact[open] .artifact-content {
+        max-height: none;
+        overflow: visible;
+      }
+
+      a {
+        color: var(--color-text);
+      }
+
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.75rem;
+        color: var(--color-text-secondary);
+      }
+    }
+
+    /* Focus visible for better keyboard UX */
+    :focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Selection */
+    ::selection {
+      background: var(--color-accent);
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="site-title">Mark Tucker <span>Content Designer</span></div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section id="introduction" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Introduction</h2>
+      <div class="intro">
+        <p class="placeholder">[PLACEHOLDER: 100-word positioning statement. Describe your approach to content design-how you think about users, what principles guide your decisions, and what distinguishes your practice. Avoid generic statements about "clear communication." Instead, articulate the specific lens you bring: perhaps a focus on cognitive load, emotional context, or system-level content thinking. This section should give readers a framework for understanding the case studies that follow.]</p>
+      </div>
+    </section>
+
+    <section id="case-studies" aria-labelledby="case-studies-heading">
+      <h2 id="case-studies-heading">Case Studies</h2>
+      <div class="case-studies">
+
+        <article class="case-study">
+          <h3 class="case-study-title">Capacity-Aware Content Design</h3>
+
+          <div class="case-study-section">
+            <h4>Context</h4>
+            <p class="placeholder">[PLACEHOLDER: 150-word description of the situation before your involvement. Who were the users? What was the product, service, or communication? What specific problems existed-were users confused, failing to complete tasks, or disengaging? Include relevant constraints: organizational context, technical limitations, stakeholder expectations. Ground the problem in observable behavior or measurable outcomes where possible.]</p>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Discovery</h4>
+            <p class="placeholder">[PLACEHOLDER: 150-word explanation of how you understood the problem. What research methods did you use or leverage? What did you learn about user mental models, vocabulary, or expectations? Describe any insights that shifted your initial assumptions. If you worked with existing research, explain how you synthesized it. The goal is to show diagnostic thinking-how you moved from symptoms to underlying causes.]</p>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Content Decisions</h4>
+            <p class="placeholder">[PLACEHOLDER: 250-word explanation of the content strategy and tactical choices you made. What structural decisions shaped the work-information hierarchy, reading order, progressive disclosure? What linguistic choices mattered-terminology, sentence structure, tone? Explain the reasoning behind each decision, linking back to discovery insights. Acknowledge tradeoffs: what did you deprioritize and why? This section demonstrates your ability to translate understanding into specific, defensible choices.]</p>
+          </div>
+
+          <details class="artifact">
+            <summary>View Artifact: Final Content Specification</summary>
+            <div class="artifact-content">
+              <pre>[PLACEHOLDER: Insert the actual artifact here. This might be a content specification document, annotated wireframe content, a style guide excerpt, or final interface copy. Preserve original formatting. If the artifact is long, include the most representative section. The artifact should demonstrate the decisions described above-readers should see the connection between your rationale and the executed work.]</pre>
+            </div>
+          </details>
+
+          <div class="case-study-section">
+            <h4>Outcome</h4>
+            <p class="placeholder">[PLACEHOLDER: 100-word description of results. Include measurable outcomes where available: completion rates, support ticket reduction, user feedback. If quantitative data isn't available, describe qualitative outcomes-stakeholder response, observed user behavior, or subsequent adoption of your approach. Be honest about what you can and cannot attribute to content changes specifically.]</p>
+          </div>
+        </article>
+
+        <article class="case-study">
+          <h3 class="case-study-title">Format Adaptation for Different Use Cases</h3>
+
+          <div class="case-study-section">
+            <h4>Context</h4>
+            <p class="placeholder">[PLACEHOLDER: 150-word description of the situation. This case study should demonstrate your ability to adapt content for different formats, channels, or user contexts. What was the source material or original content? What were the target formats or contexts? Why was adaptation necessary-different devices, different user goals, different moments in a journey? Establish the complexity of the challenge.]</p>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Discovery</h4>
+            <p class="placeholder">[PLACEHOLDER: 150-word explanation of your research and analysis. How did the different contexts change user needs or behavior? What remained constant across formats and what had to change? If you conducted comparative analysis, describe your method. Show how you identified the essential content that had to persist versus the contextual elements that needed adaptation.]</p>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Content Decisions</h4>
+            <p class="placeholder">[PLACEHOLDER: 250-word explanation of your adaptation strategy. How did you handle information density across formats? What got cut, condensed, or restructured? How did you maintain coherence and voice while adapting to different constraints? Explain any systems or frameworks you created to ensure consistency. Describe specific examples of content that changed significantly between formats and why.]</p>
+          </div>
+
+          <div class="artifact-pair">
+            <details class="artifact">
+              <summary>View Artifact: Format A</summary>
+              <div class="artifact-content">
+                <pre>[PLACEHOLDER: Insert the first format version. This might be the desktop/full version, the original document, or the primary channel content. Label it clearly so readers understand what context this serves.]</pre>
+              </div>
+            </details>
+
+            <details class="artifact">
+              <summary>View Artifact: Format B</summary>
+              <div class="artifact-content">
+                <pre>[PLACEHOLDER: Insert the second format version. This might be the mobile/condensed version, the adapted document, or the secondary channel content. Readers should be able to compare the two artifacts and see your adaptation decisions in practice.]</pre>
+              </div>
+            </details>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Outcome</h4>
+            <p class="placeholder">[PLACEHOLDER: 100-word description of results. How did the adapted content perform? Were there differences in effectiveness across formats? Include any data on user engagement, task completion, or preference. Note if this work established patterns or templates used for subsequent adaptation projects.]</p>
+          </div>
+        </article>
+
+        <article class="case-study">
+          <h3 class="case-study-title">Protocol and Guideline Design</h3>
+
+          <div class="case-study-section">
+            <h4>Context</h4>
+            <p class="placeholder">[PLACEHOLDER: 150-word description of the governance, process, or instructional content challenge. Who needed to follow these protocols or guidelines? What was at stake if they failed-user harm, inconsistency, inefficiency? What existing documentation existed and why wasn't it working? This case study should demonstrate your ability to create content that shapes behavior over time, not just one-time communications.]</p>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Discovery</h4>
+            <p class="placeholder">[PLACEHOLDER: 150-word explanation of how you understood the audience and use context. When and how would people encounter this content? What competing demands affected their attention? Were there comprehension barriers-expertise gaps, language diversity, stress or time pressure? Describe how you learned about actual vs. intended use of existing guidelines.]</p>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Content Decisions</h4>
+            <p class="placeholder">[PLACEHOLDER: 250-word explanation of your approach to making protocols usable. How did you structure information for findability and scannability? What decisions did you make about granularity-when to be prescriptive vs. principle-based? How did you handle exceptions and edge cases? Explain your approach to maintenance and updates. Describe any testing or iteration that shaped the final structure.]</p>
+          </div>
+
+          <details class="artifact">
+            <summary>View Artifact: Protocol Document Excerpt</summary>
+            <div class="artifact-content">
+              <pre>[PLACEHOLDER: Insert a representative section of the protocol or guideline document. Choose a section that demonstrates your structural thinking and writing clarity. If the full document is long, select a portion that shows hierarchy, formatting decisions, and instructional voice. Include any navigation aids, cross-references, or contextual help you designed.]</pre>
+            </div>
+          </details>
+
+          <div class="case-study-section">
+            <h4>Outcome</h4>
+            <p class="placeholder">[PLACEHOLDER: 100-word description of results. How did adoption or compliance change? Were there reductions in errors, questions, or support requests? Describe any feedback from the people using the guidelines. If this work scaled or was replicated, note that. Be specific about what content design contributed versus other factors.]</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:hello@example.com">hello@example.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <a href="https://linkedin.com/in/username">linkedin.com/in/username</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Location</span>
+          <span>Málaga, Spain</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Mark Tucker</p>
+    </div>
+  </footer>
+</body>
+</html>
