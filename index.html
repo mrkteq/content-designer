@@ -125,6 +125,10 @@
       outline-offset: 2px;
     }
 
+    ul {
+      margin-left: var(--space-md);
+    }
+
     /* Layout */
     .container {
       max-width: var(--max-width);
@@ -260,11 +264,14 @@
     }
 
     .artifact summary::before {
-      content: "▸";
-      font-size: 0.75rem;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 0.5em solid transparent;
+      border-bottom: 0.5em solid transparent;
+      border-left: 0.75em solid currentColor;
       transition: transform 0.15s;
     }
-
     .artifact[open] summary::before {
       transform: rotate(90deg);
     }
@@ -419,29 +426,280 @@
 
           <div class="case-study-section">
             <h4>Context</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word description of the situation before your involvement. Who were the users? What was the product, service, or communication? What specific problems existed-were users confused, failing to complete tasks, or disengaging? Include relevant constraints: organizational context, technical limitations, stakeholder expectations. Ground the problem in observable behavior or measurable outcomes where possible.]</p>
+            <p class="placeholder">User (myself) experienced variable cognitive capacity affecting work quality and sustainability. Existing productivity systems assumed consistent capacity. Mismatch caused repeated burnout and failed execution.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Discovery</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word explanation of how you understood the problem. What research methods did you use or leverage? What did you learn about user mental models, vocabulary, or expectations? Describe any insights that shifted your initial assumptions. If you worked with existing research, explain how you synthesized it. The goal is to show diagnostic thinking-how you moved from symptoms to underlying causes.]</p>
+            <p class="placeholder">Identified four distinct capacity states through self-observation: High, Medium, Low, Depleted. Each state had observable indicators and predictable duration patterns. Attempting high-complexity tasks at low capacity produced poor output and accelerated depletion.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Content Decisions</h4>
-            <p class="placeholder">[PLACEHOLDER: 250-word explanation of the content strategy and tactical choices you made. What structural decisions shaped the work-information hierarchy, reading order, progressive disclosure? What linguistic choices mattered-terminology, sentence structure, tone? Explain the reasoning behind each decision, linking back to discovery insights. Acknowledge tradeoffs: what did you deprioritize and why? This section demonstrates your ability to translate understanding into specific, defensible choices.]</p>
+            <ul class="placeholder">
+              <li>Created explicit state classification with behavioral indicators (user can self-assess without ambiguity)
+              <li>Mapped activities to capacity requirements (decision load removed at point of execution)</li>
+              <li>Routing decision tree provides single-path navigation (no branching choices when capacity compromised)</li>
+              <li>Warning signs and intervention protocols use pattern-matching language (user recognizes state, system prescribes response)</li>
+              <li>Language is directive, not advisory (reduces cognitive load during impaired states)</li>
+            </ul>
+          </div>
+
+          <div class="case-study-section">
+            <h4>Structure Rationale</h4>
+            <ul class="placeholder">
+              <li>Headers function as navigation, not decoration</li>
+              <li>Bullet points for scannable decision criteria</li>
+              <li>Tables for activity-to-capacity mapping (visual lookup faster than prose)</li>
+              <li>Prohibited "Do NOT" framing for forcing functions (stronger than "avoid")</li>
+            </ul>
           </div>
 
           <details class="artifact">
             <summary>View Artifact: Final Content Specification</summary>
             <div class="artifact-content">
-              <pre>[PLACEHOLDER: Insert the actual artifact here. This might be a content specification document, annotated wireframe content, a style guide excerpt, or final interface copy. Preserve original formatting. If the artifact is long, include the most representative section. The artifact should demonstrate the decisions described above-readers should see the connection between your rationale and the executed work.]</pre>
+              <pre># Cognitive Capacity Routing Specification
+
+## Purpose
+
+Define decision protocols for routing tasks based on current cognitive capacity, preventing burnout while maintaining forward progress.
+
+## Capacity State Classification
+
+### High Capacity
+**Indicators**:
+- Clear thinking, normal energy
+- Can focus for 2+ hours consecutively
+- Complex problem-solving feels manageable
+- No brain fog or confusion
+
+**Duration Typical**: 2-4 hours (usually morning)
+
+**Optimal Activities**:
+- JavaScript learning (Eloquent JavaScript chapters)
+- Portfolio project building (3-5 hour projects)
+- Technical interview preparation
+- Complex problem-solving (debugging, architecture decisions)
+- Resume optimization (STAR bullets, ATS formatting)
+
+### Medium Capacity
+**Indicators**:
+- Functional but effort required
+- Focus limited to 30-60 minute blocks
+- Simple tasks feel manageable, complex tasks feel overwhelming
+- Mild mental fatigue present
+
+**Duration Typical**: 4-6 hours (usually midday to afternoon)
+
+**Optimal Activities**:
+- Freelance platform bidding (repetitive, low complexity)
+- Job application submission (templated, customization limited)
+- Portfolio site updates (administrative, not creative)
+- Documentation (STAR bullets for completed projects)
+- Code review of own work (not building new features)
+
+### Low Capacity
+**Indicators**:
+- Significant effort required for simple tasks
+- Focus limited to 10-20 minute bursts
+- Decision-making impaired
+- Strong desire to rest or distract
+
+**Duration Typical**: Variable (usually late afternoon/evening or entire day if exhausted)
+
+**Optimal Activities**:
+- Testing deployment URLs (mechanical, no decision-making)
+- Planning next day's tasks (low cognitive load)
+- LifeOS Inbox processing (classification only, no execution)
+- Passive learning (reading, not coding)
+- Rest (preferred option if capacity very low)
+
+### Depleted Capacity
+**Indicators**:
+- Cannot focus on work tasks
+- Physical exhaustion present
+- Decision-making severely impaired
+- Strong resistance to any productive activity
+
+**Duration Typical**: Variable (recovery required)
+
+**Optimal Activity**:
+- Complete rest, no work activities
+- Resume work next day at natural capacity level
+
+## Routing Decision Tree
+
+```
+Wake up
+↓
+Assess capacity
+↓
+High? → Execute morning block (technical work)
+Medium? → Execute afternoon block (bids/applications)
+Low? → Execute evening block (documentation) OR rest
+Depleted? → Rest entirely, resume tomorrow
+```
+
+## Daily Capacity Assessment Protocol
+
+### Morning Assessment (9:00 AM)
+
+Ask:
+1. Can I focus on complex technical work for 2 hours?
+2. Does reading code feel manageable or overwhelming?
+3. Can I explain technical concepts clearly?
+
+**Yes to all 3** → High capacity, execute morning block
+**Yes to 1-2** → Medium capacity, start with afternoon block
+**No to all** → Low capacity, start with evening block or rest
+
+### Midday Reassessment (12:00 PM)
+
+If started at high capacity:
+- Capacity maintained? → Continue technical work
+- Capacity declined to medium? → Switch to afternoon block
+- Capacity declined to low? → Switch to evening block or rest
+
+If started at medium capacity:
+- Capacity increased? → Attempt technical work (small task only)
+- Capacity maintained? → Continue afternoon block
+- Capacity declined to low? → Switch to evening block or rest
+
+### Evening Assessment (16:00 PM)
+
+- Can still perform administrative tasks? → Continue evening block
+- Cannot focus on any work? → End day, rest
+
+## Activity-to-Capacity Mapping
+
+### High Capacity Required
+- JavaScript chapter work (Eloquent JavaScript)
+- Building new portfolio projects
+- Debugging complex issues
+- Technical interview preparation
+- Architecture decisions
+
+**Do NOT attempt these at medium or low capacity** (quality suffers, frustration increases)
+
+### Medium Capacity Sufficient
+- Freelance platform bidding (10 daily minimum)
+- Job application submission (5 daily minimum)
+- Portfolio site administrative updates
+- Writing STAR bullets for completed work
+- Reviewing and responding to messages
+
+**Can be performed at high capacity** (but reserves high capacity for suboptimal tasks)
+
+### Low Capacity Sufficient
+- Testing deployment URLs
+- Planning next day (simple task list)
+- LifeOS Inbox classification
+- Passive reading (no active coding)
+- Documentation organization
+
+**Should NOT be performed at high or medium capacity** (waste of higher capacity)
+
+### No Capacity Required
+- Complete rest
+- Sleep
+- Non-work activities
+
+## Forcing Functions
+
+### Capacity Override Prevention
+
+**Never force high-capacity work at low capacity**
+Consequences:
+- Low-quality output
+- Frustration and burnout risk
+- Time wasted (work must be redone)
+- Capacity depletion accelerated
+
+If deadline pressure exists:
+1. Reduce scope of work instead of forcing capacity
+2. Break work into smaller chunks executable at current capacity
+3. Defer to next high-capacity period (usually next morning)
+
+### Minimum Viable Daily Progress
+
+**High capacity days**: Complete all daily minimums + technical work
+**Medium capacity days**: Complete daily minimums (bids + applications)
+**Low capacity days**: Complete simplified minimums (5 bids, 2 applications) OR rest
+**Depleted capacity days**: Rest entirely
+
+Do NOT attempt to "catch up" by forcing work at low capacity.
+
+## Pattern Recognition
+
+### Capacity Trends (Track Weekly)
+
+Monitor for patterns:
+- High capacity mostly mornings? → Schedule all technical work morning block
+- Capacity crashes after lunch? → Front-load critical work before noon
+- Low capacity 3+ consecutive days? → Burnout warning, increase rest
+
+Adjust daily schedule based on observed patterns.
+
+### Burnout Prevention
+
+**Warning signs**:
+- Low capacity 3+ consecutive days
+- Consistent inability to meet daily minimums
+- Physical symptoms (headaches, exhaustion, sleep disruption)
+- Emotional resistance to all work activities
+
+**Intervention** (if 2+ warning signs present):
+1. Reduce daily minimums by 50%
+2. Eliminate technical work for 3 days (maintenance activities only)
+3. Increase sleep and rest periods
+4. Resume full schedule only when capacity returns to normal
+
+## Capacity-Based Planning
+
+### Project Assignment
+
+Before starting any work session:
+1. Assess current capacity (high/medium/low)
+2. Consult activity-to-capacity mapping
+3. Select appropriate work from that category
+4. Execute until capacity declines or block ends
+5. Reassess capacity before next block
+
+### Weekly Planning
+
+Sunday evening:
+- Review previous week's capacity patterns
+- Identify highest-capacity periods (usually mornings)
+- Schedule technical work (JavaScript, portfolio building) during those periods
+- Schedule lower-capacity work (bids, applications) during medium periods
+- Leave low-capacity periods flexible (documentation or rest)
+
+## Success Metrics
+
+Capacity routing is effective when:
+- Technical work consistently completed at high capacity
+- Daily minimums met 5+ days per week without forcing
+- Burnout symptoms absent
+- Weekly progress maintained without exhaustion
+- Work quality consistent across tasks
+
+## Failure Conditions
+
+Capacity routing has failed if:
+- Consistently forcing work at insufficient capacity
+- Burnout symptoms present 3+ consecutive days
+- Work quality declining despite effort
+- Daily minimums missed 3+ consecutive days
+- Physical or emotional exhaustion persistent
+
+Recovery protocol: Reduce all commitments by 50%, rest until capacity returns, resume gradually.
+</pre>
             </div>
           </details>
 
           <div class="case-study-section">
             <h4>Outcome</h4>
-            <p class="placeholder">[PLACEHOLDER: 100-word description of results. Include measurable outcomes where available: completion rates, support ticket reduction, user feedback. If quantitative data isn't available, describe qualitative outcomes-stakeholder response, observed user behavior, or subsequent adoption of your approach. Be honest about what you can and cannot attribute to content changes specifically.]</p>
+            <p class="placeholder">System enabled sustained execution across 30+ day periods without burnout recurrence. Capacity-appropriate task routing reduced wasted effort on mismatched work.</p>
           </div>
         </article>
 
