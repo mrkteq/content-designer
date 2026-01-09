@@ -310,6 +310,7 @@
     @media (min-width: 640px) {
       .artifact-pair {
         flex-direction: row;
+        margin: var(--space-md);
       }
 
       .artifact-pair .artifact {
@@ -413,7 +414,11 @@
     <section id="introduction" aria-labelledby="intro-heading">
       <h2 id="intro-heading">Introduction</h2>
       <div class="intro">
-        <p class="placeholder">[PLACEHOLDER: 100-word positioning statement. Describe your approach to content design-how you think about users, what principles guide your decisions, and what distinguishes your practice. Avoid generic statements about "clear communication." Instead, articulate the specific lens you bring: perhaps a focus on cognitive load, emotional context, or system-level content thinking. This section should give readers a framework for understanding the case studies that follow.]</p>
+        <p class="placeholder">I design content that reduces cognitive load and enables clear action.</p>
+        <p class="placeholder">My background is in frontend development, where I learned that structure determines usability. The best interface fails if the words confuse. The clearest writing fails if the structure fights the reader.</p>
+        <p class="placeholder">I approach content design as systems work. Users exist in variable states, different contexts, different capacities, different goals. Content must meet them where they are, not where we assume they should be. This means deliberate decisions about structure, format, language, and timing.</p>
+        <p class="placeholder">The case studies below demonstrate my process: identifying user needs, researching constraints, making explicit content decisions, and measuring outcomes. Each artifact began as a functional document solving a real problem. The surrounding narrative explains why I made the choices I made.</p>
+        <p class="placeholder">I am based in Málaga, Spain, available for remote work across UK and EU time zones.</p>
       </div>
     </section>
 
@@ -426,33 +431,30 @@
 
           <div class="case-study-section">
             <h4>Context</h4>
-            <p class="placeholder">User (myself) experienced variable cognitive capacity affecting work quality and sustainability. Existing productivity systems assumed consistent capacity. Mismatch caused repeated burnout and failed execution.</p>
+            <p class="placeholder">Productivity systems assume consistent user capacity. They provide the same interface, the same information density, and the same decision requirements regardless of user state. For users experiencing variable cognitive capacity—whether from fatigue, illness, stress, or neurodivergent patterns—this mismatch causes system abandonment or harmful forcing (attempting complex tasks while impaired).</p>
+            <p class="placeholder">I needed a personal operational system that acknowledged capacity variation as a permanent constraint, not a temporary problem to overcome. The system had to function when I could not make good decisions about what the system should tell me to do.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Discovery</h4>
-            <p class="placeholder">Identified four distinct capacity states through self-observation: High, Medium, Low, Depleted. Each state had observable indicators and predictable duration patterns. Attempting high-complexity tasks at low capacity produced poor output and accelerated depletion.</p>
+            <p class="placeholder">Through systematic self-observation over several months, I identified four distinct capacity states with reliable indicators:</p>
+            <ul class="placeholder">
+              <li>High: Clear thinking, 2+ hour focus possible, complex problem-solving accessible</li>
+              <li>Medium: Functional but effortful, 30-60 minute focus blocks, simple tasks manageable</li>
+              <li>Low: Significant effort for simple tasks, 10-20 minute bursts maximum, decision-making impaired</li>
+              <li>Depleted: Cannot focus on work, physical exhaustion present, requires complete rest</li>
+            </ul>
+            <p class="placeholder">Each state had predictable duration patterns and optimal activity types. Critically, the transition between states was often invisible to the user experiencing it—I would attempt high-capacity work while actually in a low-capacity state, producing poor output and accelerating depletion.</p>
+            <p class="placeholder">The core user need: a system that makes capacity-appropriate decisions for me when I cannot reliably make them myself.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Content Decisions</h4>
-            <ul class="placeholder">
-              <li>Created explicit state classification with behavioral indicators (user can self-assess without ambiguity)
-              <li>Mapped activities to capacity requirements (decision load removed at point of execution)</li>
-              <li>Routing decision tree provides single-path navigation (no branching choices when capacity compromised)</li>
-              <li>Warning signs and intervention protocols use pattern-matching language (user recognizes state, system prescribes response)</li>
-              <li>Language is directive, not advisory (reduces cognitive load during impaired states)</li>
-            </ul>
-          </div>
-
-          <div class="case-study-section">
-            <h4>Structure Rationale</h4>
-            <ul class="placeholder">
-              <li>Headers function as navigation, not decoration</li>
-              <li>Bullet points for scannable decision criteria</li>
-              <li>Tables for activity-to-capacity mapping (visual lookup faster than prose)</li>
-              <li>Prohibited "Do NOT" framing for forcing functions (stronger than "avoid")</li>
-            </ul>
+            <p class="placeholder">State classification with behavioral indicators. Users cannot assess their own capacity through introspection alone. I provided observable, testable indicators: "Can I focus on complex technical work for 2 hours?" is answerable. "Am I at high capacity?" is not. The content forces self-assessment through concrete questions rather than abstract self-rating.
+            <p class="placeholder">Activity-to-capacity mapping as lookup table. When capacity is compromised, users cannot process prose efficiently. I structured the activity mapping as a scannable table with clear categories: "High Capacity Required," "Medium Capacity Sufficient," "Low Capacity Sufficient." The user identifies their state, then looks up permitted activities. No interpretation required.</p>
+            <p class="placeholder">Directive language, not advisory. The document uses "Do NOT attempt" rather than "Consider avoiding." When a user is in a low-capacity state, hedged language creates decision load. Directive framing removes ambiguity. The user follows instructions rather than weighing options.</p>
+            <p class="placeholder">Forcing functions as pre-flight checklist. The "Capacity Override Prevention" section exists because users in degraded states will rationalize forcing. The content explicitly names this pattern and provides a hard rule: "Never force high-capacity work at low capacity." Naming the failure mode reduces its occurrence.</p>
+            <p class="placeholder">Burnout warning signs as pattern-matching list. Users in early burnout cannot recognize it through self-assessment. I provided external indicators: "Low capacity 3+ consecutive days," "Consistent inability to meet daily minimums." The content enables recognition through pattern-matching rather than self-diagnosis.</p>
           </div>
 
           <details class="artifact">
@@ -699,7 +701,8 @@ Recovery protocol: Reduce all commitments by 50%, rest until capacity returns, r
 
           <div class="case-study-section">
             <h4>Outcome</h4>
-            <p class="placeholder">System enabled sustained execution across 30+ day periods without burnout recurrence. Capacity-appropriate task routing reduced wasted effort on mismatched work.</p>
+            <p class="placeholder">The system enabled sustained execution across 30+ day periods without burnout recurrence. Capacity-appropriate task routing eliminated wasted effort on mismatched work. The explicit "Depleted" state with permission to rest completely removed guilt-driven forcing that previously accelerated depletion cycles.</p>
+            <p class="placeholder">The document has been revised twice based on observed failures, each revision tightening language or adding forcing functions where the original content permitted workarounds.</p>
           </div>
         </article>
 
@@ -708,38 +711,420 @@ Recovery protocol: Reduce all commitments by 50%, rest until capacity returns, r
 
           <div class="case-study-section">
             <h4>Context</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word description of the situation. This case study should demonstrate your ability to adapt content for different formats, channels, or user contexts. What was the source material or original content? What were the target formats or contexts? Why was adaptation necessary-different devices, different user goals, different moments in a journey? Establish the complexity of the challenge.]</p>
+            <p class="placeholder">Problem solving methodologies exist in books, courses, and frameworks. They are typically comprehensive and optimised for learning, not for use at moment of need. A user facing an immediate problem cannot process a 200 page methodology. They need the right tool, now, with minimal decision overhead.</p>
+            <p class="placeholder">I had synthesised problem solving approaches from multiple sources into a comprehensive reference document. The document was thorough and well structured. It was also useless when I actually had a problem to solve, because accessing the relevant section required cognitive capacity I did not have while stuck.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Discovery</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word explanation of your research and analysis. How did the different contexts change user needs or behavior? What remained constant across formats and what had to change? If you conducted comparative analysis, describe your method. Show how you identified the essential content that had to persist versus the contextual elements that needed adaptation.]</p>
+            <p class="placeholder">I identified two distinct use cases for the same underlying content:</p>
+            <p class="placeholder"><strong>Learning/Reference Use Case</strong>: User has time and capacity. Goal is understanding the full system, building mental models, internalising principles. Comprehensive coverage appropriate. User reads linearly or explores systematically.</p>
+            <p class="placeholder"><strong>Active Problem Solving Use Case</strong>: User is stuck, possibly frustrated, capacity partially consumed by the problem itself. Goal is selecting and applying one tool immediately. Comprehensive coverage is obstacle. User needs fastest path to appropriate action.</p>
+            <p class="placeholder">The same content cannot serve both use cases optimally. Format and structure must adapt to user state and intent.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Content Decisions</h4>
-            <p class="placeholder">[PLACEHOLDER: 250-word explanation of your adaptation strategy. How did you handle information density across formats? What got cut, condensed, or restructured? How did you maintain coherence and voice while adapting to different constraints? Explain any systems or frameworks you created to ensure consistency. Describe specific examples of content that changed significantly between formats and why.]</p>
+            <p class="placeholder"><strong>Two separate documents, not one document with sections</strong>. I initially considered a single document with "quick reference" and "full reference" sections. Testing revealed this failed, users in the active problem solving state still encountered the comprehensive content and got pulled into reading rather than acting. Physical separation into two files enforced the boundary.</p>
+            <p class="placeholder"><strong>Situation-to-diagram routing as primary structure (quick version)</strong>. The quick reference opens with "Situation-to-Diagram Quick Reference" a lookup table mapping problem states to diagram types. User identifies their situation, receives tool recommendation, follows numbered steps. No preamble, no principles, no context. Action first.</p>
+            <p class="placeholder"><strong>Principles and theory retained only in comprehensive version</strong>. The full document includes "Core Principles," "Cognitive State Routing Protocol," and detailed methodology. This content aids learning and supports deliberate practice. It is excluded entirely from the quick reference, not summarized, not linked, absent.</p>
+            <p class="placeholder"><strong>Numbered steps, maximum 5 per tool</strong>. Each diagram type in the quick reference includes only the essential creation steps. "Box-and-Arrow Diagram" has four steps. If a tool requires more than five steps, it is either too complex for quick reference or needs decomposition.</p>
+            <p class="placeholder"><strong>Red flags section in both versions with identical content</strong>. Both documents include the same "Red Flags" section: "Stop if time on tool exceeds time on problem" and "Analysis continues 3+ days without action." This content is critical regardless of use case and appears in both without modification.</p>
           </div>
 
           <div class="artifact-pair">
             <details class="artifact">
               <summary>View Artifact: Format A</summary>
               <div class="artifact-content">
-                <pre>[PLACEHOLDER: Insert the first format version. This might be the desktop/full version, the original document, or the primary channel content. Label it clearly so readers understand what context this serves.]</pre>
+                <pre># Diagrams
+
+## Purpose
+
+Systematic approach to visual thinking through diagrams. Maps cognitive states to appropriate diagram types with step-by-step creation guides.
+
+## Cognitive State Routing Protocol
+
+### State Classification
+```
+Cannot articulate problem → CONFUSED → Box-and-Arrow Diagram
+Know problem, unclear cause → STUCK → Why-Why-Why Analysis (5-Layer)
+Multiple validated options → DECISION → Two-Column Consequence List or Weighted Matrix
+```
+
+### Cognitive Capacity Assessment
+
+**High Capacity** (clear thinking, normal energy):
+- Use full diagram creation process
+- Generate multiple options
+- Systematic analysis
+
+**Medium Capacity** (functional but impaired):
+- Use simplified diagram versions
+- Limit to 3 options maximum
+- Single-pass analysis only
+
+**Low Capacity** (compromised thinking, low energy):
+- Skip to action without diagram
+- Use previous decisions/templates
+- Defer complex analysis to higher capacity state
+
+## Core Principles
+
+- Externalization precedes solution
+- Root cause vs. symptom
+- Start simple, add complexity only when needed
+- Diagrams counter VUCA forces: Stability, Transparency, Understanding, Clarity, Kindness
+
+## Mandatory Tools (Use in Order)
+
+### 1. Box-and-Arrow Diagram
+**When**: Cannot explain problem clearly
+
+**Process**:
+1. Draw rectangle for each entity involved
+2. Draw arrows showing relationships
+3. Label all shapes and arrows explicitly
+4. Write problem statement in one sentence
+
+**Termination**: Problem can be articulated clearly
+
+### 2. Why-Why-Why Analysis (5-Layer)
+**When**: Problem clear, cause unknown
+
+**Process**:
+1. Write problem statement
+2. Ask "Why is this happening?" → Record answer (Layer 1)
+3. Ask "Why does that happen?" → Record answer (Layer 2)
+4. Repeat for Layers 3-5
+5. At Layer 5, validate: "If I fix this, does original problem disappear?"
+
+**Depth Guide**:
+- Layers 1-2: Observable symptoms
+- Layers 3-4: Behavior patterns
+- Layer 5: Root cause (structural/foundational)
+
+### 3. Two-Column Consequence List
+**When**: Binary choice with significant consequences
+
+**Process**:
+1. Draw vertical line down center
+2. Write Option A and Option B at top
+3. List all consequences in respective columns
+4. Circle worst-case consequence in each column
+5. Select option whose worst-case is acceptable
+
+## Enhancement Tools (Add Only When Mandatory Tools Fail)
+
+### Logic Tree
+**When**: Single why-chain insufficient (3+ independent causes)
+
+### Weighted Decision Matrix
+**When**: 3+ options AND 5+ criteria
+
+### Process Flow Diagram
+**When**: Sequential steps need mapping
+
+### Swimlane Diagram
+**When**: Multiple actors cause confusion
+
+## Four-Step Problem-Solving Process
+
+### Step 1: Understand Current Situation
+- Define problem in one clear sentence
+- Specify goal: What (measurable), When (deadline), How (constraints)
+- Test: Can you measure success?
+
+### Step 2: Identify Root Cause
+- Use Why-Why-Why Analysis to reach Layer 5
+- If multiple causes, use Logic Tree
+- Validate with data, not assumptions
+- Test: If you fix this cause, does original problem disappear?
+
+### Step 3: Develop Action Plan
+- List minimum 5 solution options
+- Evaluate feasibility
+- Select hypothesis solution
+- Define success metrics BEFORE execution
+- Set review checkpoint
+
+### Step 4: Execute and Iterate
+- Execute planned action
+- Measure outcome against predefined criteria
+- Review at scheduled checkpoint
+- If unsuccessful: Return to Step 2 or 3
+- If successful: Document solution pattern
+
+## Implementation Rules
+
+### Forcing Functions (Pre-Action Checklist)
+Before action, verify:
+1. Problem externalized (diagram/written)
+2. Root cause identified (not symptom)
+3. Minimum 5 options generated
+4. Success measurement defined
+5. Review point scheduled
+
+If any answer is NO: Stop. Complete that step.
+
+### Red Flags (Over-Complication)
+Abort if:
+- Time on diagram exceeds time on problem
+- Analysis continues 3+ days without action
+- Creating overhead that prevents execution
+
+### Cognitive Capacity Routing
+
+**High Capacity**:
+- Full diagram creation
+- Multiple iterations
+- Comprehensive analysis
+
+**Medium Capacity**:
+- Simplified diagrams only
+- Single iteration
+- 3 options maximum
+- 30-minute time limit per diagram
+
+**Low Capacity**:
+- Skip diagram creation
+- Use template from previous decision
+- Execute based on prior pattern
+- Defer complex analysis to high capacity state
+
+## Minimum Viable Problem-Solving
+
+For any problem:
+1. Write problem in one sentence
+2. Draw it or list causes (box-and-arrow or Why-Why-Why)
+3. Identify most fixable cause
+4. Execute one action today
+5. Check tomorrow if action helped
+
+Cycle time: 24 hours maximum from problem identification to first action.
+
+## Anti-Patterns (Failure Modes)
+
+| Failure | Detection | Fix |
+|---------|-----------|-----|
+| Solution jumping | Action before cause analysis | Force Why-Why-Why first |
+| Analysis paralysis | No decision after 3 days | Set 30-min timer, decide with available data |
+| Vague goals | Cannot measure success | Apply What/When/How test |
+| Complexity overwhelm | Cannot articulate problem | Create box-and-arrow diagram |
+
+## Diagram Construction Rules
+
+**Start simple**:
+- Basic shapes (rectangles, circles, diamonds)
+- Lines for connections
+- Clear labels on everything
+- Nothing decorative in first iteration
+
+**Be consistent**:
+- Same shape for same type of element
+- Same arrow style for same type of relationship
+
+**Iterate**:
+- First version will be incomplete
+- Expect 2-3 refinements
+- Each iteration adds clarity
+
+## Sources
+
+Watanabe, K. (2007). *Problem Solving 101: A Simple Book for Smart People.* Portfolio/Penguin.
+
+Covert, A. (2022). *Stuck? Diagrams Help.* Self-published.
+</pre>
               </div>
             </details>
 
             <details class="artifact">
               <summary>View Artifact: Format B</summary>
               <div class="artifact-content">
-                <pre>[PLACEHOLDER: Insert the second format version. This might be the mobile/condensed version, the adapted document, or the secondary channel content. Readers should be able to compare the two artifacts and see your adaptation decisions in practice.]</pre>
+                <pre># Diagrams Quick
+
+## Purpose
+
+Quick-reference guide for diagram selection and creation. Condensed from comprehensive problem-solving frameworks.
+
+## Core Principles
+
+- Externalization before solution
+- Root cause vs symptom
+- Start simple
+- Diagrams counter VUCA: Stability, Transparency, Understanding, Clarity, Kindness
+
+## Situation-to-Diagram Quick Reference
+
+### Problem Clarification
+
+**Cannot explain problem** → Box-and-Arrow Diagram
+1. Draw rectangles for entities
+2. Draw arrows for relationships
+3. Label everything
+4. Write problem statement in one sentence
+
+**Know problem, unclear cause** → Why-Why-Why Analysis (5-Layer)
+1. Write problem
+2. Ask "Why?" 5 times
+3. Layer 5 = root cause
+4. Test: If fixed, does problem disappear?
+
+**Multiple simultaneous causes** → Logic Tree
+1. Problem at trunk
+2. Branch into MECE categories
+3. Sub-branch to specific causes
+4. Mark yes/no based on data
+
+### Decision-Making
+
+**Binary choice** → Two-Column Consequence List
+1. Divide page vertically
+2. List consequences for each option
+3. Circle worst-case in each column
+4. Select acceptable worst-case
+
+**3+ options, 5+ criteria** → Weighted Decision Matrix
+1. List criteria (assign weights: H=3x, M=2x, L=1x)
+2. Score each option (1-5 scale)
+3. Multiply score by weight
+4. Sum totals, highest wins
+
+**Sequential decisions** → Decision Tree
+1. Draw branches for each choice
+2. Continue branching to end states
+3. Work backward to evaluate optimal path
+
+### Planning and Process
+
+**Sequential steps** → Process Flow Diagram
+1. Rectangle for each step
+2. Arrows showing flow
+3. Diamond for decisions
+4. Label all elements
+
+**Multiple actors** → Swimlane Diagram
+1. Horizontal lanes per actor
+2. Steps in appropriate lanes
+3. Arrows across lanes show handoffs
+
+**Timeline with dependencies** → Gantt Chart
+1. Tasks down left column
+2. Time scale across top
+3. Bars showing duration
+4. Arrows showing dependencies
+
+**Long-term phases** → Roadmap
+1. Horizontal timeline
+2. Major phases as segments
+3. Milestones as points
+4. Key activities under phases
+
+### Creative Thinking
+
+**Generating ideas** → Mind Map
+1. Central concept in middle
+2. Main branches radiating outward
+3. Sub-branches from each main branch
+4. Continue until ideas stop
+5. Connect related items across branches
+
+**Breaking mental block** → Random Connection Matrix
+1. List problem elements (5-10)
+2. List random words (5-10)
+3. Force connection in each grid cell
+4. Develop promising connections
+
+**Concept overlap** → Venn Diagram
+1. Circle per concept (2-4 maximum)
+2. Overlap where shared attributes
+3. Unique attributes in non-overlapping sections
+4. Shared attributes in overlap
+
+### Relationship and Structure
+
+**Network of connections** → Network Diagram
+1. Node for each entity
+2. Lines between connected nodes
+3. Vary thickness for strength (optional)
+4. Observe clusters and hubs
+
+**Hierarchical structure** → Hierarchy Diagram
+1. Highest level at top
+2. Children below parents
+3. Consistent horizontal alignment per level
+4. One parent per item
+
+**Sequence of events** → Timeline
+1. Horizontal line for time span
+2. Mark scale intervals
+3. Events as points along line
+4. Vertical markers at event points
+
+**State changes** → State Diagram
+1. Circle for each state
+2. Arrows for valid transitions
+3. Label arrows with triggers
+4. Mark initial and final states
+
+## Tool Selection Priority
+
+**Start here**:
+1. Box-and-arrow (problem unclear)
+2. Why-Why-Why (problem clear, cause unknown)
+3. Two-column list (binary decision)
+
+**Add complexity only when**:
+- Single why-chain fails → Logic tree
+- 3+ options and 5+ criteria → Weighted matrix
+- Process involves handoffs → Swimlane
+- Time dependencies matter → Gantt/Timeline
+
+## Four-Step Problem-Solving Process
+
+1. **Define situation**: Problem in one sentence, goal (What/When/How)
+2. **Identify root cause**: Why-Why-Why to Layer 5 or Logic Tree
+3. **Develop action plan**: Minimum 5 options, select best, define success metrics
+4. **Execute and iterate**: Take action, measure, review, adjust
+
+## Minimum Viable Practice
+
+For any problem:
+1. Write problem in one sentence
+2. Draw it or list causes
+3. Identify most fixable cause
+4. Execute one action today
+5. Check tomorrow if action helped
+
+Cycle time: 24 hours maximum.
+
+## Red Flags
+
+Stop if:
+- Time on tool exceeds time on problem
+- Analysis continues 3+ days without action
+- Asking "which diagram?" instead of starting
+
+## Diagram Construction
+
+- Basic shapes only (rectangles, circles, diamonds)
+- Lines for connections
+- Labels on everything
+- Nothing decorative
+- Expect 2-3 iterations
+
+## Sources
+
+Watanabe, K. (2007). *Problem Solving 101*
+Covert, A. (2022). *Stuck? Diagrams Help*
+</pre>
               </div>
             </details>
           </div>
 
           <div class="case-study-section">
             <h4>Outcome</h4>
-            <p class="placeholder">[PLACEHOLDER: 100-word description of results. How did the adapted content perform? Were there differences in effectiveness across formats? Include any data on user engagement, task completion, or preference. Note if this work established patterns or templates used for subsequent adaptation projects.]</p>
+            <p class="placeholder">The paired documents enabled appropriate tool selection within 60 seconds during active problem solving, versus 10+ minutes of searching through comprehensive reference. The comprehensive version remained valuable for periodic review and methodology refinement, serving its intended learning purpose without compromise.</p>
+            <p class="placeholder">Usage pattern confirmed the split: quick reference accessed during work sessions, comprehensive version accessed during weekly review periods.</p>
           </div>
         </article>
 
@@ -748,29 +1133,249 @@ Recovery protocol: Reduce all commitments by 50%, rest until capacity returns, r
 
           <div class="case-study-section">
             <h4>Context</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word description of the governance, process, or instructional content challenge. Who needed to follow these protocols or guidelines? What was at stake if they failed-user harm, inconsistency, inefficiency? What existing documentation existed and why wasn't it working? This case study should demonstrate your ability to create content that shapes behavior over time, not just one-time communications.]</p>
+            <p class="placeholder">AI coding assistants (Claude, ChatGPT, Copilot) offer significant productivity gains but create dependency risk. Users accept generated code without comprehension. Debugging becomes impossible without AI assistance. The tool that accelerates learning simultaneously prevents it.</p>
+            <p class="placeholder">I needed a protocol governing my own AI assistant usage that captured productivity benefits while preventing dependency formation. The protocol had to be specific enough to constrain behavior, flexible enough for varied situations, and honest about the tradeoffs involved.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Discovery</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word explanation of how you understood the audience and use context. When and how would people encounter this content? What competing demands affected their attention? Were there comprehension barriers-expertise gaps, language diversity, stress or time pressure? Describe how you learned about actual vs. intended use of existing guidelines.]</p>
+            <p class="placeholder">Through observation of my own AI pairing sessions, I identified failure patterns:</p>
+            <ul class="placeholder">
+              <li><strong>Comprehension skip</strong>: Accepting code without reading it fully, discovered later when debugging fails</li>
+              <li><strong>Complexity creep</strong>: Requesting features beyond current understanding, creating unmaintainable code</li>
+              <li><strong>Prompt laziness</strong>: Requesting complete solutions rather than guidance, eliminating learning</li>
+              <li><strong>Dependency formation</strong>: Inability to write equivalent code without AI assistance after extended AI-assisted period</li>
+            </ul>
+            <p class="placeholder">The core tension: AI assistance is most valuable when users are least capable of evaluating its output. The protocol must be most restrictive precisely when users are most tempted to ignore restrictions.</p>
           </div>
 
           <div class="case-study-section">
             <h4>Content Decisions</h4>
-            <p class="placeholder">[PLACEHOLDER: 250-word explanation of your approach to making protocols usable. How did you structure information for findability and scannability? What decisions did you make about granularity-when to be prescriptive vs. principle-based? How did you handle exceptions and edge cases? Explain your approach to maintenance and updates. Describe any testing or iteration that shaped the final structure.]</p>
+            <p class="placeholder"><strong>Comprehension-First Protocol as binding rules, not suggestions</strong>. The document opens with three non-negotiable rules: "Understand Before Deploy," "Complexity Threshold," "Incremental Building." Framing as protocol rather than guidelines signals that these are constraints, not preferences. Users cannot rationalise exceptions to protocols as easily as they can ignore suggestions.</p>
+            <p class="placeholder"><strong>Explicit prohibited patterns</strong>. Rather than only describing good behavior, I enumerated bad behavior explicitly: "Do NOT request complete applications in single prompt," "Do NOT accept code without explanation." Prohibition lists are more memorable and recognizable than aspiration lists. Users can pattern match their own behavior against prohibited actions.</p>
+            <p class="placeholder"><strong>Quality control checklist as gate</strong>. Before accepting any AI generated code, users must verify: "Every line understood," "Can explain what code does," "Tested in browser successfully," "Could recreate similar solution independently." The checklist is a forcing function, if any item is unchecked, the user cannot proceed. This moves the decision from willpower to process.</p>
+            <p class="placeholder"><strong>Warning signs of over reliance as self diagnostic</strong>. I included explicit indicators of dependency formation: "Copying code without reading," "Unable to debug AI generated code," "Skipping comprehension in favor of speed." Users in early dependency cannot recognise it through self assessment. The list enables recognition through behavioural pattern matching.</p>
+            <p class="placeholder"><strong>Mandatory manual work as structural prevention</strong>. The protocol requires that every project include "at least one feature built entirely without AI assistance." This is not a suggestion, it is a structural requirement. Dependency cannot form if the protocol enforces regular unassisted work.</p>
+            <p class="placeholder"><strong>Failure conditions with explicit stop criteria</strong>. The document ends with conditions requiring immediate cessation of AI assistance: "Cannot explain code in own words," "Multiple unexplained bugs in AI generated code." These are not warnings, they are stop conditions. When triggered, the user must build equivalent functionality manually before resuming AI usage.</p>
           </div>
 
           <details class="artifact">
             <summary>View Artifact: Protocol Document Excerpt</summary>
             <div class="artifact-content">
-              <pre>[PLACEHOLDER: Insert a representative section of the protocol or guideline document. Choose a section that demonstrates your structural thinking and writing clarity. If the full document is long, select a portion that shows hierarchy, formatting decisions, and instructional voice. Include any navigation aids, cross-references, or contextual help you designed.]</pre>
+              <pre># AI Pairing
+
+## Purpose
+
+Define protocols for using AI assistants (Claude, ChatGPT) as coding partners while maintaining comprehension and avoiding dependency.
+
+## Binding Constraints
+
+- Cannot steer complex LLM-generated implementations without full comprehension
+- Must understand every line of code before deployment
+- Build complexity threshold: 3-5 hours per project
+- Current capability: vanilla JavaScript, HTML/CSS, basic tooling
+
+## Comprehension-First Protocol
+
+### Rule 1: Understand Before Deploy
+
+Every line of AI-generated code must be:
+1. Read completely
+2. Understood functionally
+3. Explained aloud or in writing
+4. Verified through testing
+
+If any line is unclear: request explanation or simplification before proceeding.
+
+### Rule 2: Complexity Threshold
+
+AI-generated solutions must not exceed current comprehension capacity:
+- **Acceptable**: Vanilla JavaScript, modern CSS, HTML5 features
+- **Requires explanation**: Array methods, promises, async/await
+- **Reject immediately**: Complex state management, advanced patterns, frameworks before mastery
+
+If solution complexity exceeds threshold: request simpler implementation.
+
+### Rule 3: Incremental Building
+
+Request code in small chunks:
+1. Single feature per request
+2. 20-50 lines maximum per response
+3. Test each chunk before requesting next
+4. Build understanding progressively
+
+Do NOT request complete applications in single prompt.
+
+## Effective Prompting Patterns
+
+### Project Initialization
+```
+I'm building a [project type] using vanilla JavaScript, HTML5, and CSS3.
+I need to create [specific feature].
+Keep the implementation simple and use only ES6+ JavaScript.
+Explain any array methods or modern syntax used.
+Provide code in chunks of 20-50 lines maximum.
+```
+
+### Feature Implementation
+```
+I need to add [specific feature] to my existing code.
+Here is my current implementation: [paste relevant code]
+Keep the solution simple and consistent with my existing code style.
+Explain your approach before providing code.
+```
+
+### Debugging
+```
+This code is producing [specific error or unexpected behavior]: [paste code]
+Expected behavior: [describe]
+Actual behavior: [describe]
+Help me understand what's wrong and how to fix it.
+Explain the root cause before providing the fix.
+```
+
+### Code Review
+```
+Review this code for: [paste code]
+1. Functionality correctness
+2. Modern best practices
+3. Potential bugs
+4. Simplification opportunities
+
+Explain any issues found and suggest improvements.
+```
+
+## Prohibited Prompting Patterns
+
+### Do NOT Request
+
+- "Build me a complete [application]" (too large, no understanding)
+- "Make this perfect" (vague, no learning)
+- "Use best practices" (assumes knowledge not present)
+- "Add all features" (scope creep, complexity explosion)
+- "Optimize this" without specifying what/why (premature optimization)
+
+### Do NOT Accept Blindly
+
+- Code without explanation
+- Solutions using unfamiliar patterns
+- Implementations exceeding 50 lines without breakdown
+- Suggestions to use libraries/frameworks before vanilla mastery
+- Refactoring that obscures logic
+
+## Learning Integration
+
+### After Each AI Interaction
+
+1. **Document understanding**: Write comment explaining what code does
+2. **Test thoroughly**: Verify functionality in browser
+3. **Experiment**: Modify code to see what breaks
+4. **Internalize pattern**: Could you recreate this without AI?
+
+If answer to step 4 is NO: request further explanation or simplification.
+
+### Building Mental Models
+
+For each new concept AI introduces:
+1. Create standalone example demonstrating concept
+2. Add to personal reference notes
+3. Build variation without AI assistance
+4. Teach concept to rubber duck or write explanation
+
+## AI Tool Selection
+
+### Claude (Preferred for)
+- Longer explanations
+- Step-by-step breakdowns
+- Code review and debugging
+- Conceptual understanding
+
+### ChatGPT (Alternative for)
+- Quick syntax lookups
+- Boilerplate generation
+- Rapid iteration on small features
+
+### GitHub Copilot (Not Recommended)
+- Inline suggestions reduce active thinking
+- Encourages code acceptance without understanding
+- Skip until vanilla JavaScript mastery achieved
+
+## Quality Control Checklist
+
+Before accepting AI-generated code:
+- [ ] Every line understood
+- [ ] Can explain what code does
+- [ ] Tested in browser successfully
+- [ ] No complexity beyond current capability
+- [ ] Could recreate similar solution independently
+- [ ] Code matches project style/patterns
+
+If any item unchecked: request clarification or simplification.
+
+## Dependency Prevention
+
+### Warning Signs of Over-Reliance
+
+- Copying code without reading
+- Accepting solutions without testing
+- Requesting complete features instead of guidance
+- Unable to debug AI-generated code
+- Skipping comprehension in favor of speed
+
+If 2+ warning signs present: stop using AI, build next feature manually.
+
+### Mandatory Manual Work
+
+Every project must include:
+- At least 1 feature built entirely without AI assistance
+- Debugging session without AI help
+- Code refactoring based on own analysis
+
+This prevents dependency and builds independent capability.
+
+## Project-Specific Protocols
+
+### Portfolio Projects (Week 1-4)
+- AI assistance permitted for: syntax, modern CSS features, fetch API patterns
+- Mandatory manual work: DOM manipulation, event handling, basic logic
+- Comprehension requirement: Explain entire codebase to rubber duck
+
+### JavaScript Practice (Eloquent JavaScript)
+- AI assistance for: Concept clarification, syntax questions, debugging specific errors
+- Mandatory manual work: All chapter exercises, projects from scratch
+- Comprehension requirement: Build each chapter project without AI before moving forward
+
+### Resume Projects
+- AI assistance permitted for: README writing, deployment documentation
+- Mandatory manual work: All code implementation, testing, debugging
+
+## Failure Conditions
+
+Stop using AI assistance immediately if:
+- Cannot explain code in own words
+- Multiple unexplained bugs in AI-generated code
+- Project complexity exceeds understanding
+- Debugging becomes impossible without AI
+- Speed prioritized over learning
+
+Resume AI usage only after building equivalent feature manually.
+
+## Success Metrics
+
+AI assistance is effective when:
+- Comprehension maintained for 100% of codebase
+- Can recreate features without AI assistance
+- Debugging capability increases over time
+- Learning new concepts, not just copying code
+- Project complexity stays within skill threshold
+</pre>
             </div>
           </details>
 
           <div class="case-study-section">
             <h4>Outcome</h4>
-            <p class="placeholder">[PLACEHOLDER: 100-word description of results. How did adoption or compliance change? Were there reductions in errors, questions, or support requests? Describe any feedback from the people using the guidelines. If this work scaled or was replicated, note that. Be specific about what content design contributed versus other factors.]</p>
+            <p class="placeholder">The protocol enabled sustained AI assisted development across multiple projects without dependency formation. Manual work requirements maintained independent capability. Comprehension first rules prevented accumulation of unmaintainable code.</p>
+            <p class="placeholder">The protocol has been revised once to strengthen the "Complexity Threshold" section after an incident where accepted code exceeded debugging capability.</p>
           </div>
         </article>
 
