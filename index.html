@@ -4,106 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mark Tucker - Content Designer. Portfolio showcasing process, rationale, and execution in content design.">
-  <title>Mark Tucker - Content Designer</title>
+  <meta name="color-scheme" content="light dark">
+  <title>Mark Tucker | Content Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* Reset and Base */
-    *, *::before, *::after {
-      box-sizing: border-box;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     :root {
-      --color-text: #1a1a1a;
-      --color-text-secondary: #525252;
-      --color-background: #ffffff;
-      --color-surface: #f5f5f5;
-      --color-border: #e0e0e0;
-      --color-accent: #0066cc;
-      --color-accent-hover: #004999;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
-      --max-width: 680px;
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 1.5rem;
-      --space-lg: 2.5rem;
-      --space-xl: 4rem;
+      --black: #0a0a0a;
+      --white: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-600: #666;
+      --gray-800: #1a1a1a;
+      --accent: #d62828;
+      --serif: 'Crimson Pro', serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --max: 680px;
+      --gap: clamp(1rem, 4vw, 2rem);
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --color-text: #e8e8e8;
-        --color-text-secondary: #a0a0a0;
-        --color-background: #121212;
-        --color-surface: #1e1e1e;
-        --color-border: #333333;
-        --color-accent: #4d9fff;
-        --color-accent-hover: #80b8ff;
+        --black: #fafafa;
+        --white: #0a0a0a;
+        --gray-100: #1a1a1a;
+        --gray-200: #2a2a2a;
+        --gray-600: #999;
+        --gray-800: #e5e5e5;
+        --accent: #ff6b6b;
       }
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 5rem;
+      -webkit-font-smoothing: antialiased;
     }
 
     body {
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--color-text);
-      background-color: var(--color-background);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      font: 400 1rem/1.6 var(--sans);
+      color: var(--black);
+      background: var(--white);
+      padding: var(--gap);
     }
 
-    /* Skip Link */
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 0;
-      padding: var(--space-sm);
-      background: var(--color-accent);
-      color: #ffffff;
-      text-decoration: none;
-      z-index: 1000;
+    @media (max-width: 640px) {
+      body {
+        font-size: 0.9375rem;
+        line-height: 1.5;
+      }
     }
 
-    .skip-link:focus {
-      top: 0;
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
     }
 
-    /* Typography */
-    h1, h2, h3, h4 {
-      line-height: 1.3;
-      font-weight: 600;
+    header {
+      margin-bottom: calc(var(--gap) * 3);
+      animation: fadeIn 0.8s var(--ease);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
-      font-size: 1.75rem;
+      font: 600 clamp(2rem, 5vw, 3rem)/1.1 var(--serif);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
     }
 
+    .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--gray-600);
+      font-weight: 400;
+    }
+
+    nav {
+      margin-top: calc(var(--gap) * 2);
+      padding-top: calc(var(--gap) * 1.5);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    nav ul {
+      display: flex;
+      gap: calc(var(--gap) * 1.5);
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--gray-600);
+      text-decoration: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: relative;
+      transition: color 0.3s var(--ease);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s var(--ease);
+    }
+
+    nav a:hover {
+      color: var(--black);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      margin-bottom: calc(var(--gap) * 4);
+      animation: fadeIn 0.8s var(--ease);
+      animation-fill-mode: both;
+    }
+
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.2s; }
+    section:nth-child(4) { animation-delay: 0.3s; }
+
     h2 {
-      font-size: 1.5rem;
-      margin-bottom: var(--space-md);
+      font: 600 clamp(1.5rem, 3.5vw, 2rem)/1.2 var(--serif);
+      margin-bottom: calc(var(--gap) * 1.5);
+      letter-spacing: -0.01em;
     }
 
     h3 {
-      font-size: 1.125rem;
-      margin-bottom: var(--space-sm);
+      font: 600 clamp(1.125rem, 2.5vw, 1.375rem)/1.3 var(--serif);
+      margin: calc(var(--gap) * 2) 0 var(--gap);
+      letter-spacing: -0.01em;
     }
 
     h4 {
-      font-size: 0.875rem;
+      font: 500 0.75rem/1.4 var(--sans);
+      color: var(--gray-600);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-text-secondary);
-      margin-bottom: var(--space-xs);
+      letter-spacing: 0.1em;
+      margin: calc(var(--gap) * 1.5) 0 0.75rem;
     }
 
     p {
-      margin-bottom: var(--space-sm);
+      margin-bottom: 1rem;
     }
 
     p:last-child {
@@ -111,437 +170,751 @@
     }
 
     a {
-      color: var(--color-accent);
-      text-decoration: underline;
-      text-underline-offset: 2px;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s var(--ease);
     }
 
     a:hover {
-      color: var(--color-accent-hover);
+      border-bottom-color: var(--accent);
     }
 
-    a:focus {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
+    ul {
+      margin: 1rem 0 1rem 1.5rem;
     }
 
-    /* Layout */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--space-md);
+    li {
+      margin-bottom: 0.5rem;
     }
 
-    /* Header */
-    .site-header {
-      padding: var(--space-md) 0;
-      border-bottom: 1px solid var(--color-border);
-      background: var(--color-background);
-    }
-
-    @media (min-width: 1025px) {
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-    }
-
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
-    }
-
-    @media (min-width: 640px) {
-      .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-
-    .site-title {
-      font-size: 1.125rem;
-      font-weight: 600;
-    }
-
-    .site-title span {
-      color: var(--color-text-secondary);
-      font-weight: 400;
-    }
-
-    /* Navigation */
-    .site-nav ul {
-      list-style: none;
-      display: flex;
-      gap: var(--space-md);
-      flex-wrap: wrap;
-    }
-
-    .site-nav a {
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      font-size: 0.9375rem;
-      padding: var(--space-xs) 0;
-      border-bottom: 2px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    .site-nav a:hover,
-    .site-nav a:focus {
-      color: var(--color-text);
-      border-bottom-color: var(--color-accent);
-      outline: none;
-    }
-
-    /* Main Content */
-    main {
-      padding: var(--space-xl) 0;
-    }
-
-    section {
-      margin-bottom: var(--space-xl);
-    }
-
-    section:last-of-type {
-      margin-bottom: 0;
-    }
-
-    /* Introduction */
     .intro {
-      font-size: 1.125rem;
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.7;
     }
 
-    /* Case Studies */
-    .case-studies {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xl);
+    article {
+      padding-top: calc(var(--gap) * 2);
+      border-top: 1px solid var(--gray-200);
     }
 
-    .case-study {
-      border-top: 1px solid var(--color-border);
-      padding-top: var(--space-lg);
+    article:first-child {
+      border-top: none;
+      padding-top: 0;
     }
 
-    .case-study-title {
-      margin-bottom: var(--space-lg);
+    details {
+      margin: calc(var(--gap) * 1.5) 0;
+      border: 1px solid var(--gray-200);
+      border-radius: 2px;
+      background: var(--gray-100);
+      overflow: hidden;
+      transition: all 0.3s var(--ease);
     }
 
-    .case-study-section {
-      margin-bottom: var(--space-lg);
+    details:hover {
+      border-color: var(--gray-600);
     }
 
-    .case-study-section:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Artifact Display */
-    .artifact {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 4px;
-      margin: var(--space-md) 0;
-    }
-
-    .artifact summary {
-      padding: var(--space-sm) var(--space-md);
+    summary {
+      padding: 1rem 1.25rem;
       cursor: pointer;
       font-weight: 500;
-      list-style: none;
+      user-select: none;
       display: flex;
       align-items: center;
-      gap: var(--space-xs);
+      gap: 0.75rem;
+      transition: background 0.2s var(--ease);
     }
 
-    .artifact summary::-webkit-details-marker {
+    summary::-webkit-details-marker {
       display: none;
     }
 
-    .artifact summary::before {
-      content: "▸";
-      font-size: 0.75rem;
-      transition: transform 0.15s;
+    summary::before {
+      content: '→';
+      font-size: 1.25rem;
+      transition: transform 0.3s var(--ease);
+      color: var(--accent);
     }
 
-    .artifact[open] summary::before {
+    details[open] summary::before {
       transform: rotate(90deg);
     }
 
-    .artifact summary:hover {
-      background: var(--color-border);
-    }
-
-    .artifact summary:focus {
-      outline: 2px solid var(--color-accent);
-      outline-offset: -2px;
+    summary:hover {
+      background: var(--gray-200);
     }
 
     .artifact-content {
-      padding: var(--space-md);
-      border-top: 1px solid var(--color-border);
-      max-height: 400px;
+      padding: 1.5rem;
+      border-top: 1px solid var(--gray-200);
+      max-height: 500px;
       overflow-y: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      background: var(--white);
     }
 
     .artifact-content pre {
-      font-family: var(--font-mono);
-      font-size: 0.875rem;
-      line-height: 1.5;
       white-space: pre-wrap;
       word-wrap: break-word;
     }
 
-    /* Side-by-side artifacts */
+    @media (max-width: 640px) {
+      .artifact-content {
+        max-height: 400px;
+        padding: 1rem;
+        font-size: 0.75rem;
+      }
+    }
+
     .artifact-pair {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
+      display: grid;
+      gap: var(--gap);
+      margin: calc(var(--gap) * 1.5) 0;
     }
 
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
       .artifact-pair {
-        flex-direction: row;
-      }
-
-      .artifact-pair .artifact {
-        flex: 1;
-        margin: 0;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    /* Placeholder styling */
-    .placeholder {
-      color: var(--color-text-secondary);
-      font-style: italic;
-    }
-
-    /* Contact */
     .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
+      display: grid;
+      gap: 0.75rem;
+      margin-top: var(--gap);
     }
 
     .contact-item {
       display: flex;
-      gap: var(--space-sm);
+      gap: 1rem;
+      align-items: baseline;
     }
 
     .contact-label {
-      color: var(--color-text-secondary);
+      color: var(--gray-600);
+      font-size: 0.875rem;
       min-width: 5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
-    /* Footer */
-    .site-footer {
-      padding: var(--space-lg) 0;
-      border-top: 1px solid var(--color-border);
-      color: var(--color-text-secondary);
+    @media (max-width: 480px) {
+      .contact-item {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+
+    footer {
+      margin-top: calc(var(--gap) * 4);
+      padding-top: calc(var(--gap) * 2);
+      border-top: 1px solid var(--gray-200);
+      color: var(--gray-600);
       font-size: 0.875rem;
     }
 
-    /* Print Styles */
-    @media print {
-      .site-header {
-        position: static;
-      }
-
-      .site-nav,
-      .artifact summary::before {
-        display: none;
-      }
-
-      .artifact {
-        break-inside: avoid;
-      }
-
-      .artifact[open] .artifact-content {
-        max-height: none;
-        overflow: visible;
-      }
-
-      a {
-        color: var(--color-text);
-      }
-
-      a[href^="http"]::after {
-        content: " (" attr(href) ")";
-        font-size: 0.75rem;
-        color: var(--color-text-secondary);
-      }
+    ::selection {
+      background: var(--accent);
+      color: var(--white);
     }
 
-    /* Focus visible for better keyboard UX */
     :focus-visible {
-      outline: 2px solid var(--color-accent);
+      outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
 
-    /* Selection */
-    ::selection {
-      background: var(--color-accent);
-      color: #ffffff;
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      nav,
+      summary::before {
+        display: none;
+      }
+
+      details[open] .artifact-content {
+        max-height: none;
+      }
+
+      a {
+        color: var(--black);
+      }
     }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <header class="site-header">
-    <div class="container header-content">
-      <div class="site-title">Mark Tucker <span>Content Designer</span></div>
-      <nav class="site-nav" aria-label="Main navigation">
+  <div class="container">
+    <header>
+      <h1>Mark Tucker</h1>
+      <p class="subtitle">Content Designer</p>
+      <nav aria-label="Main navigation">
         <ul>
           <li><a href="#introduction">Introduction</a></li>
           <li><a href="#case-studies">Case Studies</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="main" class="container">
-    <section id="introduction" aria-labelledby="intro-heading">
-      <h2 id="intro-heading">Introduction</h2>
-      <div class="intro">
-        <p class="placeholder">[PLACEHOLDER: 100-word positioning statement. Describe your approach to content design-how you think about users, what principles guide your decisions, and what distinguishes your practice. Avoid generic statements about "clear communication." Instead, articulate the specific lens you bring: perhaps a focus on cognitive load, emotional context, or system-level content thinking. This section should give readers a framework for understanding the case studies that follow.]</p>
-      </div>
-    </section>
+    <main>
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <div class="intro">
+          <p>I design content that reduces cognitive load and enables clear action.</p>
+          <p>My background is in front-end development, where I learned that structure determines usability. The best interface fails if the words confuse. The clearest writing fails if the structure fights the reader.</p>
+          <p>I approach content design as systems work. Users exist in variable states, different contexts, different capacities, different goals. Content must meet them where they are, not where we assume they should be. This means deliberate decisions about structure, format, language, and timing.</p>
+          <p>The case studies below demonstrate my process: identifying user needs, researching constraints, making explicit content decisions, and measuring outcomes. Each artifact began as a functional document solving a real problem. The surrounding narrative explains why I made the choices I made.</p>
+          <p>I am based in Málaga, Spain, available for remote work across UK and EU time zones.</p>
+        </div>
+      </section>
 
-    <section id="case-studies" aria-labelledby="case-studies-heading">
-      <h2 id="case-studies-heading">Case Studies</h2>
-      <div class="case-studies">
+      <section id="case-studies">
+        <h2>Case Studies</h2>
 
-        <article class="case-study">
-          <h3 class="case-study-title">Capacity-Aware Content Design</h3>
+        <article>
+          <h3>Capacity-Aware Content Design</h3>
 
-          <div class="case-study-section">
-            <h4>Context</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word description of the situation before your involvement. Who were the users? What was the product, service, or communication? What specific problems existed-were users confused, failing to complete tasks, or disengaging? Include relevant constraints: organizational context, technical limitations, stakeholder expectations. Ground the problem in observable behavior or measurable outcomes where possible.]</p>
-          </div>
+          <h4>Context</h4>
+          <p>Productivity systems assume consistent user capacity. They provide the same interface, the same information density, and the same decision requirements regardless of user state. For users experiencing variable cognitive capacity, whether from fatigue, illness, stress, or neurodivergent patterns, this mismatch causes system abandonment or harmful forcing (attempting complex tasks while impaired).</p>
+          <p>I needed a personal operational system that acknowledged capacity variation as a permanent constraint, not a temporary problem to overcome. The system had to function when I could not make good decisions about what the system should tell me to do.</p>
 
-          <div class="case-study-section">
-            <h4>Discovery</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word explanation of how you understood the problem. What research methods did you use or leverage? What did you learn about user mental models, vocabulary, or expectations? Describe any insights that shifted your initial assumptions. If you worked with existing research, explain how you synthesized it. The goal is to show diagnostic thinking-how you moved from symptoms to underlying causes.]</p>
-          </div>
+          <h4>Discovery</h4>
+          <p>Through systematic self observation over several months, I identified four distinct capacity states with reliable indicators:</p>
+          <ul>
+            <li><strong>High</strong>: Clear thinking, 2+ hour focus possible, complex problem solving accessible</li>
+            <li><strong>Medium</strong>: Functional but effortful, 30-60 minute focus blocks, simple tasks manageable</li>
+            <li><strong>Low</strong>: Significant effort for simple tasks, 10-20 minute bursts maximum, decision making impaired</li>
+            <li><strong>Depleted</strong>: Cannot focus on work, physical exhaustion present, requires complete rest</li>
+          </ul>
+          <p>Each state had predictable duration patterns and optimal activity types. Critically, the transition between states was often invisible to the user experiencing it, I would attempt high capacity work while actually in a low capacity state, producing poor output and accelerating depletion.</p>
+          <p>The core user need: a system that makes capacity appropriate decisions for me when I cannot reliably make them myself.</p>
 
-          <div class="case-study-section">
-            <h4>Content Decisions</h4>
-            <p class="placeholder">[PLACEHOLDER: 250-word explanation of the content strategy and tactical choices you made. What structural decisions shaped the work-information hierarchy, reading order, progressive disclosure? What linguistic choices mattered-terminology, sentence structure, tone? Explain the reasoning behind each decision, linking back to discovery insights. Acknowledge tradeoffs: what did you deprioritize and why? This section demonstrates your ability to translate understanding into specific, defensible choices.]</p>
-          </div>
+          <h4>Content Decisions</h4>
+          <p><strong>State classification with behavioral indicators</strong>. Users cannot assess their own capacity through introspection alone. I provided observable, testable indicators: "Can I focus on complex technical work for 2 hours?" is answerable. "Am I at high capacity?" is not. The content forces self assessment through concrete questions rather than abstract self rating.</p>
+          <p><strong>Activity-to-capacity mapping as lookup table</strong>. When capacity is compromised, users cannot process prose efficiently. I structured the activity mapping as a scannable table with clear categories: "High Capacity Required," "Medium Capacity Sufficient," "Low Capacity Sufficient." The user identifies their state, then looks up permitted activities. No interpretation required.</p>
+          <p><strong>Directive language, not advisory</strong>. The document uses "Do NOT attempt" rather than "Consider avoiding." When a user is in a low capacity state, hedged language creates decision load. Directive framing removes ambiguity. The user follows instructions rather than weighing options.</p>
+          <p><strong>Forcing functions as pre-flight checklist</strong>. The "Capacity Override Prevention" section exists because users in degraded states will rationalise forcing. The content explicitly names this pattern and provides a hard rule: "Never force high capacity work at low capacity." Naming the failure mode reduces its occurrence.</p>
+          <p><strong>Burnout warning signs as pattern matching list</strong>. Users in early burnout cannot recognise it through self assessment. I provided external indicators: "Low capacity 3+ consecutive days," "Consistent inability to meet daily minimums." The content enables recognition through pattern matching rather than self diagnosis.</p>
 
-          <details class="artifact">
+          <details>
             <summary>View Artifact: Final Content Specification</summary>
             <div class="artifact-content">
-              <pre>[PLACEHOLDER: Insert the actual artifact here. This might be a content specification document, annotated wireframe content, a style guide excerpt, or final interface copy. Preserve original formatting. If the artifact is long, include the most representative section. The artifact should demonstrate the decisions described above-readers should see the connection between your rationale and the executed work.]</pre>
+              <pre># Cognitive Capacity Routing Specification
+
+## Purpose
+
+Define decision protocols for routing tasks based on current cognitive capacity, preventing burnout while maintaining forward progress.
+
+## Capacity State Classification
+
+### High Capacity
+**Indicators**:
+- Clear thinking, normal energy
+- Can focus for 2+ hours consecutively
+- Complex problem-solving feels manageable
+- No brain fog or confusion
+
+**Duration Typical**: 2-4 hours (usually morning)
+
+**Optimal Activities**:
+- JavaScript learning (Eloquent JavaScript chapters)
+- Portfolio project building (3-5 hour projects)
+- Technical interview preparation
+- Complex problem-solving (debugging, architecture decisions)
+- Resume optimization (STAR bullets, ATS formatting)
+
+### Medium Capacity
+**Indicators**:
+- Functional but effort required
+- Focus limited to 30-60 minute blocks
+- Simple tasks feel manageable, complex tasks feel overwhelming
+- Mild mental fatigue present
+
+**Duration Typical**: 4-6 hours (usually midday to afternoon)
+
+**Optimal Activities**:
+- Freelance platform bidding (repetitive, low complexity)
+- Job application submission (templated, customization limited)
+- Portfolio site updates (administrative, not creative)
+- Documentation (STAR bullets for completed projects)
+- Code review of own work (not building new features)
+
+### Low Capacity
+**Indicators**:
+- Significant effort required for simple tasks
+- Focus limited to 10-20 minute bursts
+- Decision-making impaired
+- Strong desire to rest or distract
+
+**Duration Typical**: Variable (usually late afternoon/evening or entire day if exhausted)
+
+**Optimal Activities**:
+- Testing deployment URLs (mechanical, no decision-making)
+- Planning next day's tasks (low cognitive load)
+- LifeOS Inbox processing (classification only, no execution)
+- Passive learning (reading, not coding)
+- Rest (preferred option if capacity very low)
+
+### Depleted Capacity
+**Indicators**:
+- Cannot focus on work tasks
+- Physical exhaustion present
+- Decision-making severely impaired
+- Strong resistance to any productive activity
+
+**Duration Typical**: Variable (recovery required)
+
+**Optimal Activity**:
+- Complete rest, no work activities
+- Resume work next day at natural capacity level
+
+## Routing Decision Tree
+
+```
+Wake up
+↓
+Assess capacity
+↓
+High? → Execute morning block (technical work)
+Medium? → Execute afternoon block (bids/applications)
+Low? → Execute evening block (documentation) OR rest
+Depleted? → Rest entirely, resume tomorrow
+```
+
+## Daily Capacity Assessment Protocol
+
+### Morning Assessment (9:00 AM)
+
+Ask:
+1. Can I focus on complex technical work for 2 hours?
+2. Does reading code feel manageable or overwhelming?
+3. Can I explain technical concepts clearly?
+
+**Yes to all 3** → High capacity, execute morning block
+**Yes to 1-2** → Medium capacity, start with afternoon block
+**No to all** → Low capacity, start with evening block or rest
+
+### Midday Reassessment (12:00 PM)
+
+If started at high capacity:
+- Capacity maintained? → Continue technical work
+- Capacity declined to medium? → Switch to afternoon block
+- Capacity declined to low? → Switch to evening block or rest
+
+If started at medium capacity:
+- Capacity increased? → Attempt technical work (small task only)
+- Capacity maintained? → Continue afternoon block
+- Capacity declined to low? → Switch to evening block or rest
+
+### Evening Assessment (16:00 PM)
+
+- Can still perform administrative tasks? → Continue evening block
+- Cannot focus on any work? → End day, rest
+
+## Activity-to-Capacity Mapping
+
+### High Capacity Required
+- JavaScript chapter work (Eloquent JavaScript)
+- Building new portfolio projects
+- Debugging complex issues
+- Technical interview preparation
+- Architecture decisions
+
+**Do NOT attempt these at medium or low capacity** (quality suffers, frustration increases)
+
+### Medium Capacity Sufficient
+- Freelance platform bidding (10 daily minimum)
+- Job application submission (5 daily minimum)
+- Portfolio site administrative updates
+- Writing STAR bullets for completed work
+- Reviewing and responding to messages
+
+**Can be performed at high capacity** (but reserves high capacity for suboptimal tasks)
+
+### Low Capacity Sufficient
+- Testing deployment URLs
+- Planning next day (simple task list)
+- LifeOS Inbox classification
+- Passive reading (no active coding)
+- Documentation organization
+
+**Should NOT be performed at high or medium capacity** (waste of higher capacity)
+
+### No Capacity Required
+- Complete rest
+- Sleep
+- Non-work activities
+
+## Forcing Functions
+
+### Capacity Override Prevention
+
+**Never force high-capacity work at low capacity**
+Consequences:
+- Low-quality output
+- Frustration and burnout risk
+- Time wasted (work must be redone)
+- Capacity depletion accelerated
+
+If deadline pressure exists:
+1. Reduce scope of work instead of forcing capacity
+2. Break work into smaller chunks executable at current capacity
+3. Defer to next high-capacity period (usually next morning)
+
+### Minimum Viable Daily Progress
+
+**High capacity days**: Complete all daily minimums + technical work
+**Medium capacity days**: Complete daily minimums (bids + applications)
+**Low capacity days**: Complete simplified minimums (5 bids, 2 applications) OR rest
+**Depleted capacity days**: Rest entirely
+
+Do NOT attempt to "catch up" by forcing work at low capacity.
+
+## Pattern Recognition
+
+### Capacity Trends (Track Weekly)
+
+Monitor for patterns:
+- High capacity mostly mornings? → Schedule all technical work morning block
+- Capacity crashes after lunch? → Front-load critical work before noon
+- Low capacity 3+ consecutive days? → Burnout warning, increase rest
+
+Adjust daily schedule based on observed patterns.
+
+### Burnout Prevention
+
+**Warning signs**:
+- Low capacity 3+ consecutive days
+- Consistent inability to meet daily minimums
+- Physical symptoms (headaches, exhaustion, sleep disruption)
+- Emotional resistance to all work activities
+
+**Intervention** (if 2+ warning signs present):
+1. Reduce daily minimums by 50%
+2. Eliminate technical work for 3 days (maintenance activities only)
+3. Increase sleep and rest periods
+4. Resume full schedule only when capacity returns to normal
+
+## Capacity-Based Planning
+
+### Project Assignment
+
+Before starting any work session:
+1. Assess current capacity (high/medium/low)
+2. Consult activity-to-capacity mapping
+3. Select appropriate work from that category
+4. Execute until capacity declines or block ends
+5. Reassess capacity before next block
+
+### Weekly Planning
+
+Sunday evening:
+- Review previous week's capacity patterns
+- Identify highest-capacity periods (usually mornings)
+- Schedule technical work (JavaScript, portfolio building) during those periods
+- Schedule lower-capacity work (bids, applications) during medium periods
+- Leave low-capacity periods flexible (documentation or rest)
+
+## Success Metrics
+
+Capacity routing is effective when:
+- Technical work consistently completed at high capacity
+- Daily minimums met 5+ days per week without forcing
+- Burnout symptoms absent
+- Weekly progress maintained without exhaustion
+- Work quality consistent across tasks
+
+## Failure Conditions
+
+Capacity routing has failed if:
+- Consistently forcing work at insufficient capacity
+- Burnout symptoms present 3+ consecutive days
+- Work quality declining despite effort
+- Daily minimums missed 3+ consecutive days
+- Physical or emotional exhaustion persistent
+
+Recovery protocol: Reduce all commitments by 50%, rest until capacity returns, resume gradually.</pre>
             </div>
           </details>
 
-          <div class="case-study-section">
-            <h4>Outcome</h4>
-            <p class="placeholder">[PLACEHOLDER: 100-word description of results. Include measurable outcomes where available: completion rates, support ticket reduction, user feedback. If quantitative data isn't available, describe qualitative outcomes-stakeholder response, observed user behavior, or subsequent adoption of your approach. Be honest about what you can and cannot attribute to content changes specifically.]</p>
-          </div>
+          <h4>Outcome</h4>
+          <p>The system enabled sustained execution across 30+ day periods without burnout recurrence. Capacity appropriate task routing eliminated wasted effort on mismatched work. The explicit "Depleted" state with permission to rest completely removed guilt driven forcing that previously accelerated depletion cycles.</p>
+          <p>The document has been revised twice based on observed failures, each revision tightening language or adding forcing functions where the original content permitted workarounds.</p>
         </article>
 
-        <article class="case-study">
-          <h3 class="case-study-title">Format Adaptation for Different Use Cases</h3>
+        <article>
+          <h3>Format Adaptation for Different Use Cases</h3>
 
-          <div class="case-study-section">
-            <h4>Context</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word description of the situation. This case study should demonstrate your ability to adapt content for different formats, channels, or user contexts. What was the source material or original content? What were the target formats or contexts? Why was adaptation necessary-different devices, different user goals, different moments in a journey? Establish the complexity of the challenge.]</p>
-          </div>
+          <h4>Context</h4>
+          <p>Problem solving methodologies exist in books, courses, and frameworks. They are typically comprehensive and optimised for learning, not for use at moment of need. A user facing an immediate problem cannot process a 200 page methodology. They need the right tool, now, with minimal decision overhead.</p>
+          <p>I had synthesised problem solving approaches from multiple sources into a comprehensive reference document. The document was thorough and well structured. It was also useless when I actually had a problem to solve, because accessing the relevant section required cognitive capacity I did not have while stuck.</p>
 
-          <div class="case-study-section">
-            <h4>Discovery</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word explanation of your research and analysis. How did the different contexts change user needs or behavior? What remained constant across formats and what had to change? If you conducted comparative analysis, describe your method. Show how you identified the essential content that had to persist versus the contextual elements that needed adaptation.]</p>
-          </div>
+          <h4>Discovery</h4>
+          <p>I identified two distinct use cases for the same underlying content:</p>
+          <p><strong>Learning/Reference Use Case</strong>: User has time and capacity. Goal is understanding the full system, building mental models, internalising principles. Comprehensive coverage appropriate. User reads linearly or explores systematically.</p>
+          <p><strong>Active Problem Solving Use Case</strong>: User is stuck, possibly frustrated, capacity partially consumed by the problem itself. Goal is selecting and applying one tool immediately. Comprehensive coverage is obstacle. User needs fastest path to appropriate action.</p>
+          <p>The same content cannot serve both use cases optimally. Format and structure must adapt to user state and intent.</p>
 
-          <div class="case-study-section">
-            <h4>Content Decisions</h4>
-            <p class="placeholder">[PLACEHOLDER: 250-word explanation of your adaptation strategy. How did you handle information density across formats? What got cut, condensed, or restructured? How did you maintain coherence and voice while adapting to different constraints? Explain any systems or frameworks you created to ensure consistency. Describe specific examples of content that changed significantly between formats and why.]</p>
-          </div>
+          <h4>Content Decisions</h4>
+          <p><strong>Two separate documents, not one document with sections</strong>. I initially considered a single document with "quick reference" and "full reference" sections. Testing revealed this failed, users in the active problem solving state still encountered the comprehensive content and got pulled into reading rather than acting. Physical separation into two files enforced the boundary.</p>
+          <p><strong>Situation-to-diagram routing as primary structure (quick version)</strong>. The quick reference opens with "Situation-to-Diagram Quick Reference" a lookup table mapping problem states to diagram types. User identifies their situation, receives tool recommendation, follows numbered steps. No preamble, no principles, no context. Action first.</p>
+          <p><strong>Principles and theory retained only in comprehensive version</strong>. The full document includes "Core Principles," "Cognitive State Routing Protocol," and detailed methodology. This content aids learning and supports deliberate practice. It is excluded entirely from the quick reference, not summarized, not linked, absent.</p>
+          <p><strong>Numbered steps, maximum 5 per tool</strong>. Each diagram type in the quick reference includes only the essential creation steps. "Box-and-Arrow Diagram" has four steps. If a tool requires more than five steps, it is either too complex for quick reference or needs decomposition.</p>
+          <p><strong>Red flags section in both versions with identical content</strong>. Both documents include the same "Red Flags" section: "Stop if time on tool exceeds time on problem" and "Analysis continues 3+ days without action." This content is critical regardless of use case and appears in both without modification.</p>
 
           <div class="artifact-pair">
-            <details class="artifact">
-              <summary>View Artifact: Format A</summary>
+            <details>
+              <summary>Format A: Comprehensive</summary>
               <div class="artifact-content">
-                <pre>[PLACEHOLDER: Insert the first format version. This might be the desktop/full version, the original document, or the primary channel content. Label it clearly so readers understand what context this serves.]</pre>
+                <pre># Diagrams
+
+## Purpose
+
+Systematic approach to visual thinking through diagrams. Maps cognitive states to appropriate diagram types with step-by-step creation guides.
+
+## Cognitive State Routing Protocol
+
+### State Classification
+```
+Cannot articulate problem → CONFUSED → Box-and-Arrow Diagram
+Know problem, unclear cause → STUCK → Why-Why-Why Analysis (5-Layer)
+Multiple validated options → DECISION → Two-Column Consequence List or Weighted Matrix
+```
+
+### Cognitive Capacity Assessment
+
+**High Capacity** (clear thinking, normal energy):
+- Use full diagram creation process
+- Generate multiple options
+- Systematic analysis
+
+**Medium Capacity** (functional but impaired):
+- Use simplified diagram versions
+- Limit to 3 options maximum
+- Single-pass analysis only
+
+**Low Capacity** (compromised thinking, low energy):
+- Skip to action without diagram
+- Use previous decisions/templates
+- Defer complex analysis to higher capacity state
+
+## Core Principles
+
+- Externalization precedes solution
+- Root cause vs. symptom
+- Start simple, add complexity only when needed
+- Diagrams counter VUCA forces: Stability, Transparency, Understanding, Clarity, Kindness
+
+## Mandatory Tools (Use in Order)
+
+### 1. Box-and-Arrow Diagram
+**When**: Cannot explain problem clearly
+
+**Process**:
+1. Draw rectangle for each entity involved
+2. Draw arrows showing relationships
+3. Label all shapes and arrows explicitly
+4. Write problem statement in one sentence
+
+**Termination**: Problem can be articulated clearly
+
+### 2. Why-Why-Why Analysis (5-Layer)
+**When**: Problem clear, cause unknown
+
+**Process**:
+1. Write problem statement
+2. Ask "Why is this happening?" → Record answer (Layer 1)
+3. Ask "Why does that happen?" → Record answer (Layer 2)
+4. Repeat for Layers 3-5
+5. At Layer 5, validate: "If I fix this, does original problem disappear?"
+
+**Depth Guide**:
+- Layers 1-2: Observable symptoms
+- Layers 3-4: Behavior patterns
+- Layer 5: Root cause (structural/foundational)
+
+### 3. Two-Column Consequence List
+**When**: Binary choice with significant consequences
+
+**Process**:
+1. Draw vertical line down center
+2. Write Option A and Option B at top
+3. List all consequences in respective columns
+4. Circle worst-case consequence in each column
+5. Select option whose worst-case is acceptable</pre>
               </div>
             </details>
 
-            <details class="artifact">
-              <summary>View Artifact: Format B</summary>
+            <details>
+              <summary>Format B: Quick Reference</summary>
               <div class="artifact-content">
-                <pre>[PLACEHOLDER: Insert the second format version. This might be the mobile/condensed version, the adapted document, or the secondary channel content. Readers should be able to compare the two artifacts and see your adaptation decisions in practice.]</pre>
+                <pre># Diagrams (Quick)
+
+## Purpose
+
+Quick-reference guide for diagram selection and creation. Condensed from comprehensive problem-solving frameworks.
+
+## Core Principles
+
+- Externalization before solution
+- Root cause vs symptom
+- Start simple
+- Diagrams counter VUCA: Stability, Transparency, Understanding, Clarity, Kindness
+
+## Situation-to-Diagram Quick Reference
+
+### Problem Clarification
+
+**Cannot explain problem** → Box-and-Arrow Diagram
+1. Draw rectangles for entities
+2. Draw arrows for relationships
+3. Label everything
+4. Write problem statement in one sentence
+
+**Know problem, unclear cause** → Why-Why-Why Analysis (5-Layer)
+1. Write problem
+2. Ask "Why?" 5 times
+3. Layer 5 = root cause
+4. Test: If fixed, does problem disappear?
+
+**Multiple simultaneous causes** → Logic Tree
+1. Problem at trunk
+2. Branch into MECE categories
+3. Sub-branch to specific causes
+4. Mark yes/no based on data
+
+### Decision-Making
+
+**Binary choice** → Two-Column Consequence List
+1. Divide page vertically
+2. List consequences for each option
+3. Circle worst-case in each column
+4. Select acceptable worst-case
+
+**3+ options, 5+ criteria** → Weighted Decision Matrix
+1. List criteria (assign weights: H=3x, M=2x, L=1x)
+2. Score each option (1-5 scale)
+3. Multiply score by weight
+4. Sum totals, highest wins</pre>
               </div>
             </details>
           </div>
 
-          <div class="case-study-section">
-            <h4>Outcome</h4>
-            <p class="placeholder">[PLACEHOLDER: 100-word description of results. How did the adapted content perform? Were there differences in effectiveness across formats? Include any data on user engagement, task completion, or preference. Note if this work established patterns or templates used for subsequent adaptation projects.]</p>
-          </div>
+          <h4>Outcome</h4>
+          <p>The paired documents enabled appropriate tool selection within 60 seconds during active problem solving, versus 10+ minutes of searching through comprehensive reference. The comprehensive version remained valuable for periodic review and methodology refinement, serving its intended learning purpose without compromise.</p>
+          <p>Usage pattern confirmed the split: quick reference accessed during work sessions, comprehensive version accessed during weekly review periods.</p>
         </article>
 
-        <article class="case-study">
-          <h3 class="case-study-title">Protocol and Guideline Design</h3>
+        <article>
+          <h3>Protocol and Guideline Design</h3>
 
-          <div class="case-study-section">
-            <h4>Context</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word description of the governance, process, or instructional content challenge. Who needed to follow these protocols or guidelines? What was at stake if they failed-user harm, inconsistency, inefficiency? What existing documentation existed and why wasn't it working? This case study should demonstrate your ability to create content that shapes behavior over time, not just one-time communications.]</p>
-          </div>
+          <h4>Context</h4>
+          <p>AI coding assistants (Claude, ChatGPT, Copilot) offer significant productivity gains but create dependency risk. Users accept generated code without comprehension. Debugging becomes impossible without AI assistance. The tool that accelerates learning simultaneously prevents it.</p>
+          <p>I needed a protocol governing my own AI assistant usage that captured productivity benefits while preventing dependency formation. The protocol had to be specific enough to constrain behavior, flexible enough for varied situations, and honest about the tradeoffs involved.</p>
 
-          <div class="case-study-section">
-            <h4>Discovery</h4>
-            <p class="placeholder">[PLACEHOLDER: 150-word explanation of how you understood the audience and use context. When and how would people encounter this content? What competing demands affected their attention? Were there comprehension barriers-expertise gaps, language diversity, stress or time pressure? Describe how you learned about actual vs. intended use of existing guidelines.]</p>
-          </div>
+          <h4>Discovery</h4>
+          <p>Through observation of my own AI pairing sessions, I identified failure patterns:</p>
+          <ul>
+            <li><strong>Comprehension skip</strong>: Accepting code without reading it fully, discovered later when debugging fails</li>
+            <li><strong>Complexity creep</strong>: Requesting features beyond current understanding, creating unmaintainable code</li>
+            <li><strong>Prompt laziness</strong>: Requesting complete solutions rather than guidance, eliminating learning</li>
+            <li><strong>Dependency formation</strong>: Inability to write equivalent code without AI assistance after extended AI-assisted period</li>
+          </ul>
+          <p>The core tension: AI assistance is most valuable when users are least capable of evaluating its output. The protocol must be most restrictive precisely when users are most tempted to ignore restrictions.</p>
 
-          <div class="case-study-section">
-            <h4>Content Decisions</h4>
-            <p class="placeholder">[PLACEHOLDER: 250-word explanation of your approach to making protocols usable. How did you structure information for findability and scannability? What decisions did you make about granularity-when to be prescriptive vs. principle-based? How did you handle exceptions and edge cases? Explain your approach to maintenance and updates. Describe any testing or iteration that shaped the final structure.]</p>
-          </div>
+          <h4>Content Decisions</h4>
+          <p><strong>Comprehension-First Protocol as binding rules, not suggestions</strong>. The document opens with three non-negotiable rules: "Understand Before Deploy," "Complexity Threshold," "Incremental Building." Framing as protocol rather than guidelines signals that these are constraints, not preferences. Users cannot rationalise exceptions to protocols as easily as they can ignore suggestions.</p>
+          <p><strong>Explicit prohibited patterns</strong>. Rather than only describing good behavior, I enumerated bad behavior explicitly: "Do NOT request complete applications in single prompt," "Do NOT accept code without explanation." Prohibition lists are more memorable and recognizable than aspiration lists. Users can pattern match their own behavior against prohibited actions.</p>
+          <p><strong>Quality control checklist as gate</strong>. Before accepting any AI generated code, users must verify: "Every line understood," "Can explain what code does," "Tested in browser successfully," "Could recreate similar solution independently." The checklist is a forcing function, if any item is unchecked, the user cannot proceed. This moves the decision from willpower to process.</p>
+          <p><strong>Warning signs of over reliance as self diagnostic</strong>. I included explicit indicators of dependency formation: "Copying code without reading," "Unable to debug AI generated code," "Skipping comprehension in favor of speed." Users in early dependency cannot recognise it through self assessment. The list enables recognition through behavioural pattern matching.</p>
+          <p><strong>Mandatory manual work as structural prevention</strong>. The protocol requires that every project include "at least one feature built entirely without AI assistance." This is not a suggestion, it is a structural requirement. Dependency cannot form if the protocol enforces regular unassisted work.</p>
+          <p><strong>Failure conditions with explicit stop criteria</strong>. The document ends with conditions requiring immediate cessation of AI assistance: "Cannot explain code in own words," "Multiple unexplained bugs in AI generated code." These are not warnings, they are stop conditions. When triggered, the user must build equivalent functionality manually before resuming AI usage.</p>
 
-          <details class="artifact">
-            <summary>View Artifact: Protocol Document Excerpt</summary>
+          <details>
+            <summary>View Artifact: Protocol Document</summary>
             <div class="artifact-content">
-              <pre>[PLACEHOLDER: Insert a representative section of the protocol or guideline document. Choose a section that demonstrates your structural thinking and writing clarity. If the full document is long, select a portion that shows hierarchy, formatting decisions, and instructional voice. Include any navigation aids, cross-references, or contextual help you designed.]</pre>
+              <pre># AI Pairing
+
+## Purpose
+
+Define protocols for using AI assistants (Claude, ChatGPT) as coding partners while maintaining comprehension and avoiding dependency.
+
+## Binding Constraints
+
+- Cannot steer complex LLM-generated implementations without full comprehension
+- Must understand every line of code before deployment
+- Build complexity threshold: 3-5 hours per project
+- Current capability: vanilla JavaScript, HTML/CSS, basic tooling
+
+## Comprehension-First Protocol
+
+### Rule 1: Understand Before Deploy
+
+Every line of AI-generated code must be:
+1. Read completely
+2. Understood functionally
+3. Explained aloud or in writing
+4. Verified through testing
+
+If any line is unclear: request explanation or simplification before proceeding.
+
+### Rule 2: Complexity Threshold
+
+AI-generated solutions must not exceed current comprehension capacity:
+- **Acceptable**: Vanilla JavaScript, modern CSS, HTML5 features
+- **Requires explanation**: Array methods, promises, async/await
+- **Reject immediately**: Complex state management, advanced patterns, frameworks before mastery
+
+If solution complexity exceeds threshold: request simpler implementation.
+
+### Rule 3: Incremental Building
+
+Request code in small chunks:
+1. Single feature per request
+2. 20-50 lines maximum per response
+3. Test each chunk before requesting next
+4. Build understanding progressively
+
+Do NOT request complete applications in single prompt.</pre>
             </div>
           </details>
 
-          <div class="case-study-section">
-            <h4>Outcome</h4>
-            <p class="placeholder">[PLACEHOLDER: 100-word description of results. How did adoption or compliance change? Were there reductions in errors, questions, or support requests? Describe any feedback from the people using the guidelines. If this work scaled or was replicated, note that. Be specific about what content design contributed versus other factors.]</p>
-          </div>
+          <h4>Outcome</h4>
+          <p>The protocol enabled sustained AI assisted development across multiple projects without dependency formation. Manual work requirements maintained independent capability. Comprehension first rules prevented accumulation of unmaintainable code.</p>
+          <p>The protocol has been revised once to strengthen the "Complexity Threshold" section after an incident where accepted code exceeded debugging capability.</p>
         </article>
+      </section>
 
-      </div>
-    </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:markanthonytucker@gmail.com">markanthonytucker@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://linkedin.com/in/mark-anthony-tucker">linkedin.com/in/mark-anthony-tucker</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <div class="contact-info">
-        <div class="contact-item">
-          <span class="contact-label">Email</span>
-          <a href="mailto:hello@example.com">hello@example.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">LinkedIn</span>
-          <a href="https://linkedin.com/in/username">linkedin.com/in/username</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">Location</span>
-          <span>Málaga, Spain</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Mark Tucker</p>
-    </div>
-  </footer>
+    <footer>
+      <p>&copy; 2026 Mark Tucker</p>
+    </footer>
+  </div>
 </body>
 </html>
