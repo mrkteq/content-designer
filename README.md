@@ -2,6 +2,8 @@
 
 Static portfolio website demonstrating content design process, rationale, and execution across three case studies.
 
+For more about my frontend development experience and projects, visit my [portfolio](https://github.com/mrkteq/marktucker-portfolio).
+
 ## Technical Stack
 
 - HTML5
