@@ -2,9 +2,7 @@
 
 Three case studies demonstrating content design process, rationale, and execution.
 
-**[View portfolio →](https://mrkteq.github.io/content-designer)**
-
-## Case Studies
+## Technical Stack
 
 1. **Capacity-Aware Content Design** — Productivity systems ignore variable cognitive capacity causing capacity-mismatched task execution.
 2. **Format Adaptation for Different Use Cases** — Comprehensive methodologies unusable during active problem-solving due to cognitive load.
