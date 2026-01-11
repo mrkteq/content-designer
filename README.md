@@ -10,7 +10,7 @@ Three case studies demonstrating content design process, rationale, and executio
 
 ## About
 
-I'm a content designer and web developer based in Spain. I focus on information structure, cognitive load, and clarity in user-facing content.
+I'm a content designer and web developer. I focus on information structure, cognitive load, and clarity in user-facing content.
 
 - [Content design portfolio](https://mrkteq.github.io/content-designer)
 - [Web development portfolio](https://mrkteq.github.io/web-developer)
