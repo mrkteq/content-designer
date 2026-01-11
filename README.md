@@ -1,104 +1,30 @@
 # Content Designer Portfolio
 
-Static portfolio website demonstrating content design process, rationale, and execution across three case studies.
+Three case studies demonstrating content design process, rationale, and execution.
 
 ## Technical Stack
 
-- HTML5
-- CSS3 (custom properties, grid, flexbox)
-- Vanilla JavaScript (scroll behavior, back-to-top)
-- No frameworks, no build process
+1. **Capacity-Aware Content Design** — Productivity systems ignore variable cognitive capacity causing capacity-mismatched task execution.
+2. **Format Adaptation for Different Use Cases** — Comprehensive methodologies unusable during active problem-solving due to cognitive load.
+3. **Protocol and Guideline Design** — AI coding assistants accelerate productivity while simultaneously preventing comprehension and learning.
 
-## Features
+## About
 
-- Mobile-first responsive design
-- Dark mode support (system preference)
-- Reduced motion support (accessibility)
-- Print-optimized styles
-- Custom scrollbars (webkit)
-- Smooth scroll navigation
-- Expandable artifact sections
+I'm a content designer and web developer based in Spain. I focus on information structure, cognitive load, and clarity in user-facing content.
 
-## Typography
+- [Content design portfolio](https://mrkteq.github.io/content-designer)
+- [Web development portfolio](https://mrkteq.github.io/web-developer)
 
-- **Headings**: Crimson Pro (serif)
-- **Body**: Inter (sans-serif)
-- **Code**: Courier New (monospace)
+---
 
-## Browser Support
+<details>
+<summary>Technical implementation</summary>
 
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile browsers (iOS Safari 14+, Chrome Android)
+Single-file static site. HTML5, CSS3, vanilla JavaScript. No frameworks or build process.
 
-## File Structure
+- Mobile-first responsive
+- WCAG AA accessible
+- Dark mode and reduced motion support
+- Lighthouse performance: 95+
 
-```
-index.html          # Single-file portfolio (self-contained)
-README.md           # This file
-```
-
-## Performance
-
-- First Contentful Paint: <1s
-- Total page size: ~50KB
-- No external dependencies (fonts loaded from Google Fonts)
-- CSS animations: GPU-accelerated
-- Zero JavaScript required for core functionality
-
-## Accessibility
-
-- Semantic HTML5 elements
-- ARIA labels on interactive elements
-- Keyboard navigation support
-- Focus visible states
-- Color contrast WCAG AA compliant
-- Respects prefers-reduced-motion
-- Respects prefers-color-scheme
-
-## Customization
-
-### Colors
-
-Modify CSS custom properties in `:root`:
-
-```css
---black: #0a0a0a;
---white: #fafafa;
---accent: #d62828;
-```
-
-### Typography
-
-Replace Google Fonts link and update variables:
-
-```css
---serif: 'Crimson Pro', serif;
---sans: 'Inter', sans-serif;
-```
-
-### Content
-
-Edit HTML directly. Case study structure:
-
-```html
-<article>
-  <h3>Title</h3>
-  <h4>Context</h4>
-  <p>...</p>
-  <h4>Discovery</h4>
-  <p>...</p>
-  <h4>Content Decisions</h4>
-  <p>...</p>
-  <details>
-    <summary>View Artifact</summary>
-    <div class="artifact-content">
-      <pre>...</pre>
-    </div>
-  </details>
-  <h4>Outcome</h4>
-  <p>...</p>
-</article>
-```
-
+</details>
